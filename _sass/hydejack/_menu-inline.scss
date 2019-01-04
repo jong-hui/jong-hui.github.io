@@ -1,6 +1,6 @@
 .fixed-top {
   position: fixed;
-  top: 0;
+  top: 90%;
   left: 0;
   width: 100%;
   z-index: 1;
@@ -15,6 +15,7 @@
 
 .menu {
   display: inline-block;
+  position: absolute;
   padding: 1.75rem 1.5rem;
   border-bottom: none;
   margin-left: -1.5rem;

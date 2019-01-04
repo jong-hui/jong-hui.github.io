@@ -129,6 +129,9 @@
     right: 2.5rem;
     left:   2.5rem;
   }
+  @media screen and (max-width: $break-point-2) {
+    padding: 0;
+  }
 }
 .sidebar-sticky::-webkit-scrollbar {
     display: none;  // Safari and Chrome
