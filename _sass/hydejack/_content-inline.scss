@@ -8,6 +8,12 @@
     min-height: 100vh;
   }
 
+  @media screen and (max-width: 440px) {
+    padding: 2rem 1rem 1rem;
+    margin-left: 19rem;
+    margin-right:3rem;
+  }
+
   @media screen and (min-width: $break-point-2) {
     padding: 4rem 1rem 12rem;
     margin-left: 19rem;
