@@ -88,8 +88,8 @@
   position: relative;
 
   @media screen {
-    min-height: 640px; // fallback
-    min-height: 100vh;
+    // min-height: 640px; // fallback
+    // min-height: 100vh;
   }
 
   @media screen and (min-width: $break-point-2) {
