@@ -5,6 +5,8 @@
   margin-right: 20px;
   border-radius: 100%;
   position: relative;
+  object-fit: cover;
+  object-position: center;
 
   @media screen and (min-width: $break-point-1) {
     width: 7rem;
