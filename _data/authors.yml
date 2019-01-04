@@ -8,8 +8,7 @@ isme2n:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    세상에서 가장 게으르기 위해 가장 부지런한 타입.
-    글쓰는 것과 디자인, 개발을 좋아한다. 좋은게 좋은거고, 예쁜게 좋은거고, 노는게 좋은거라고 생각한다. 좋아하는게 많은 편.
+    안산공업고등학교를 재학하고있는 3학년 천종희.
 
   # This photo will be used in the about section
   picture:
@@ -23,7 +22,7 @@ isme2n:
   # Comment/uncommet to show/hide
   # Icons appear in order, can be rearranged:
   social:
-    facebook:        jonghui
+    facebook:        ijonghui
     # twitter:         <username>
     # google:          <number>
     # vk:              <username>
