@@ -1,5 +1,5 @@
-window.addEventListener("load",function() {
+function init () {
     setTimeout(function(){
         window.scrollTo(0, 1);
-    }, 10);
-});
+    }, 100);
+}
