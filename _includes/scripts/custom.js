@@ -1,5 +1,5 @@
-window.init = function() {
+(window.init = function() {
     setTimeout(function(){
         window.scrollTo(0, 1);
     }, 100);
-}
+});
