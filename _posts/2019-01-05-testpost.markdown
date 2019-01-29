@@ -18,9 +18,7 @@ comments: true
 테스트의 글을 작성합니다
 
 ```
-	<div class="sidebar-box">
-	  {% if author.picture %}
-	    {% include srcset-img.html class="me" img=author.picture alt=author.name %}
-	  {% endif %}
-	</div>
+<div class="sidebar-box">
+
+</div>
 ```
