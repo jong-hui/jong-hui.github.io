@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Design pattern] MVC 패턴"
-subtitle: "디자인 패턴중 하나인 MVC를 정리해드립니다."
+subtitle: "MVC 패턴"
 categories: tech
 tags: pattern mvc mvvc mvp
 comments: true
@@ -16,7 +16,9 @@ comments: true
 
 
 웹앱을 만들수록 우리가 만든코드들은 이해하기 힘들어집니다.
+
 이해하기 힘들어지면 코드의 수정은 어려워지고 결국 문제점이 발견됩니다.
+
 이러한 문제를 해결하기 위해 우리는 많은 디자인 패턴을 가지고있고, 그 중 하나가 MVC입니다.
 
 ***
@@ -26,6 +28,7 @@ comments: true
 MVC, 즉 모델-뷰-컨트롤러를 뜻하는 말 입니다.
 
 우리는 하나의 웹앱에서 각자가 하는 일에 따라(*기능에 따라*) 장소를 나누어 봤습니다.
+
 이번시간에 다루는 패턴에서는 총 세 장소로 나누어 집니다.
 각각 모델, 뷰, 컨트롤러입니다.
 
