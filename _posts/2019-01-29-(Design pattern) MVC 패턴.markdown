@@ -5,6 +5,7 @@ subtitle: "MVC 패턴"
 categories: tech
 tags: pattern mvc mvvc mvp
 comments: true
+header-img: "/img/posts/mvc-pattern.jpg"
 ---
 
 모델-뷰-컨트롤러
