@@ -21,7 +21,7 @@ Promise를 이용하여 제작하던 중 순차적으로 실행시켜야 하는 
 
 ### 문제개요
 
-![pang-1](/assets/img/posts/promise-pang/1.PNG)
+![pang-1](https://jong-hui.github.io/assets/img/posts/promise-pang/1.PNG)
 
 8x8 의 배열로 이루어진 이 게임은 애니팡과 유사한 게임이다.
 게임을 시작하면 과일들이 아래로 내려오고, 내려온 과일 중 3개 이상 연속되는 과일이 있는경우
@@ -82,7 +82,7 @@ function wait (sec) {
 }
 ~~~
 
-![console](/assets/img/posts/promise-pang/seque.PNG)
+![console](https://jong-hui.github.io/assets/img/posts/promise-pang/seque.PNG)
 
 위와 같이 wait함수들이 차례대로, 그 전 Promise가 끝나면 실행되는 결과를 볼 수 있다.
 

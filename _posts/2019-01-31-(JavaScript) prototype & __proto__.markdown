@@ -52,26 +52,26 @@ class Test {
 
 ### 어떻게 다를까?
 
-![javascript_console](\assets\img\posts\prototype&__proto__\console1.png)
+![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console1.png)
 
 Test 객체를 new 키워드로 생성하니 2 + 1을 해주는 함수(이하 B함수)는 `__proto__` 안에 들어갔고, 1 + 1을 해주는 함수(이하 A함수)는 사라졌습니다.
 
 그럼 이번엔 조금 다른 코드를 실행해보겠습니다.
 
-![javascript_console](\assets\img\posts\prototype&__proto__\console2.png)
+![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console2.png)
 
 A함수가 `__proto__`와 같은 위치에 들어갔고, B함수는 proto 안에 있습니다.
 이 상태에서 `t.sum()` 을 실행시키면 A함수가 실행됩니다.
 
 그렇다면 이번엔 A함수를 정의하지 않고 `t.sum()` 을 실행시키겠습니다.
 
-![javascript_console](\assets\img\posts\prototype&__proto__\console3.png)
+![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console3.png)
 
 B함수가 실행이되어 3이 리턴됩니다. B함수는 `__proto__`안에 있는데 어떻게 실행이되고 3이 리턴이된걸까요?
 
 이번엔 좀 다른 예제를 들어보겠습니다.
 
-![javascript_console](\assets\img\posts\prototype&__proto__\console4.png)
+![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console4.png)
 
 이번에도 역시 toString이란 함수는 없지만 정상적으로 실행이 되었습니다.
 
@@ -91,11 +91,11 @@ toString은 Object의 prototype중 하나입니다 [Object.prototype.toString](h
 그렇다면 `t.__proto__`는 우리가 Test 생성자에 prototype으로 선언한것들이 들어갔습니다. 그래서 B함수(`t.__proto__.sum`)가 실행된거죠.
 하지만 `t.__proto__.__proto__`에는 어느 객체의 prototype이 들어갔던걸까요? 방금전 봤던 콘솔을 다시 보겠습니다.
 
-![javascript_console](\assets\img\posts\prototype&__proto__\console4.png)
+![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console4.png)
 
 toString은 Object의 프로토타입입니다. 즉 t의 prototype link(= \_\_proto\_\_)중 Object가 있는것이죠.
 
-![javascript_console](\assets\img\posts\prototype&__proto__\console5.png)
+![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console5.png)
 
 그래서 `t.__proto__.__proto__` 와 `Object.prototype을` 비교하면 true가 나옵니다. Number의 prototype과 비교하면 false가 나오겠습니다.
 
@@ -166,7 +166,7 @@ Animal의 prototype을 강제로 넣어줌으로써 볼트의 울음소리를 �
 
 네! 쓸 수 있습니다 `Animal.prototype.__proto__`가 `Object.prototype`이기 때문이죠
 
-![javascript_console](\assets\img\posts\prototype&__proto__\console6.png)
+![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console6.png)
 
 정리하자면 이렇게 되었습니다.
 
@@ -181,7 +181,7 @@ Animal의 prototype을 강제로 넣어줌으로써 볼트의 울음소리를 �
 
 ### 문제해결
 
-문제는 해결되지 않은것같다 아직도 자바스크립트가 이해가 잘 안된다. 더욱 더 공부를많이해야겠다.
+아직도 자바스크립트 이해가 잘 안된다. 더욱 더 공부를많이해야겠다.
 
 
 ### 참고한 사이트
