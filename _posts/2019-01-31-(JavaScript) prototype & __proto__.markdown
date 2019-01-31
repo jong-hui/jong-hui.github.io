@@ -29,7 +29,7 @@ Test.prototype.sum = function () {
 }
 ```
 
-평소 자바스크립트의 프로토타입을 이해하고 있었다고 생각했지만, 이 코드를 보며 생각하지 않을 수가 없었습니다.
+평소 자바스크립트의 프로토타입을 이해하고 있었다고 생각했지만, 이 코드를 보며 생각하지 않을 수가 없었습니다.  
 분명 sum 함수는 차이가 있는걸 알고 있지만 왜 차이가있는지, 왜 그렇게 쓰는지 알 수 없었습니다.
 
 참고로 위 코드는 아래의 코드와 같습니다.
@@ -60,7 +60,7 @@ Test 객체를 new 키워드로 생성하니 2 + 1을 해주는 함수(이하 B�
 
 ![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console2.png)
 
-A함수가 `__proto__`와 같은 위치에 들어갔고, B함수는 proto 안에 있습니다.
+A함수가 `__proto__`와 같은 위치에 들어갔고, B함수는 proto 안에 있습니다.  
 이 상태에서 `t.sum()` 을 실행시키면 A함수가 실행됩니다.
 
 그렇다면 이번엔 A함수를 정의하지 않고 `t.sum()` 을 실행시키겠습니다.
@@ -83,12 +83,12 @@ toString은 Object의 prototype중 하나입니다 [Object.prototype.toString](h
 
 객체의 prototype은 객체를 생성했을때 `__proto__` 안에 들어가게됩니다. 그래서 B함수가 `__proto__` 안에 존재하는것이죠.
 
-자바스크립트 객체는 만약 찾는 곳(이 포스팅 에서는 `t.sum()`)이 없다면 `__proto__` 에 있는지 확인하고 있다면 찾아주는 것입니다.
+자바스크립트 객체는 만약 찾는 곳(이 포스팅 에서는 `t.sum()`)이 없다면 `__proto__` 에 있는지 확인하고 있다면 찾아주는 것입니다.  
 만약 `__proto__`에도 없다면 `__proto__`의 `__proto__`까지 찾게됩니다.
 
 다시 말 하자면 t.sum이 없다면 `t.__proto__.sum` 을 찾고 또 없다면 `t.__proto__.__proto__.sum` 까지 찾는것이죠. 이게 반복되어 결국 최상위까지 가게되고, 끝까지 없다면 undefined를 리턴해줍니다.
 
-그렇다면 `t.__proto__`는 우리가 Test 생성자에 prototype으로 선언한것들이 들어갔습니다. 그래서 B함수(`t.__proto__.sum`)가 실행된거죠.
+그렇다면 `t.__proto__`는 우리가 Test 생성자에 prototype으로 선언한것들이 들어갔습니다. 그래서 B함수(`t.__proto__.sum`)가 실행된거죠.  
 하지만 `t.__proto__.__proto__`에는 어느 객체의 prototype이 들어갔던걸까요? 방금전 봤던 콘솔을 다시 보겠습니다.
 
 ![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console4.png)
