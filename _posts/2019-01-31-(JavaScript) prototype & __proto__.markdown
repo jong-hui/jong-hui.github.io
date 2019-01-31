@@ -54,20 +54,20 @@ class Test {
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console1.png)
 
-Test 객체를 new 키워드로 생성하니 2 + 1을 해주는 함수(이하 B함수)는 \_\_proto\_\_ 안에 들어갔고, 1 + 1을 해주는 함수(이하 A함수)는 사라졌습니다.
+Test 객체를 new 키워드로 생성하니 2 + 1을 해주는 함수(이하 B함수)는 `__proto__` 안에 들어갔고, 1 + 1을 해주는 함수(이하 A함수)는 사라졌습니다.
 
 그럼 이번엔 조금 다른 코드를 실행해보겠습니다.
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console2.png)
 
-A함수가 \_\_proto\_\_와 같은 위치에 들어갔고, B함수는 proto 안에 있습니다.
+A함수가 `__proto__`와 같은 위치에 들어갔고, B함수는 proto 안에 있습니다.
 이 상태에서 t.sum() 을 실행시키면 A함수가 실행됩니다.
 
 그렇다면 이번엔 A함수를 정의하지 않고 t.sum() 을 실행시키겠습니다.
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console3.png)
 
-B함수가 실행이되어 3이 리턴됩니다. B함수는 \_\_proto\_\_안에 있는데 어떻게 실행이되고 3이 리턴이된걸까요?
+B함수가 실행이되어 3이 리턴됩니다. B함수는 `__proto__`안에 있는데 어떻게 실행이되고 3이 리턴이된걸까요?
 
 이번엔 좀 다른 예제를 들어보겠습니다.
 
@@ -81,23 +81,23 @@ toString은 Object의 prototype중 하나입니다 [Object.prototype.toString](h
 
 ### \_\_proto\_\_가 주범
 
-객체의 prototype은 객체를 생성했을때 \_\_proto\_\_ 안에 들어가게됩니다. 그래서 B함수가 \_\_proto\_\_ 안에 존재하는것이죠.
+객체의 prototype은 객체를 생성했을때 `__proto__` 안에 들어가게됩니다. 그래서 B함수가 `__proto__` 안에 존재하는것이죠.
 
-자바스크립트 객체는 만약 찾는 곳(이 포스팅 에서는 `t.sum()`)이 없다면 \_\_proto\_\_ 에 있는지 확인하고 있다면 찾아주는 것입니다.
-만약 \_\_proto\_\_에도 없다면 \_\_proto\_\_의 \_\_proto\_\_까지 찾게됩니다.
+자바스크립트 객체는 만약 찾는 곳(이 포스팅 에서는 `t.sum()`)이 없다면 `__proto__` 에 있는지 확인하고 있다면 찾아주는 것입니다.
+만약 `__proto__`에도 없다면 `__proto__`의 `__proto__`까지 찾게됩니다.
 
-다시 말 하자면 t.sum이 없다면 `t.\_\_proto\_\_.sum` 을 찾고 또 없다면 `t.\_\_proto\_\_.\_\_proto\_\_.sum` 까지 찾는것이죠. 이게 반복되어 결국 최상위까지 가게되고, undefined를 리턴해줍니다.
+다시 말 하자면 t.sum이 없다면 `t.__proto__.sum` 을 찾고 또 없다면 `t.__proto__.__proto__.sum` 까지 찾는것이죠. 이게 반복되어 결국 최상위까지 가게되고, 끝까지 없다면 undefined를 리턴해줍니다.
 
-그렇다면 `t.\_\_proto\_\_`는 우리가 Test 생성자에 prototype으로 선언한것들이 들어갔습니다. 그래서 B함수(t.\_\_proto\_\_.sum)가 실행된거죠.
-하지만 `t.\_\_proto\_\_.\_\_proto\_\_`에는 어느 객체의 prototype이 들어갔던걸까요? 방금전 봤던 콘솔을 다시 보겠습니다.
+그렇다면 `t.__proto__`는 우리가 Test 생성자에 prototype으로 선언한것들이 들어갔습니다. 그래서 B함수(`t.__proto__.sum`)가 실행된거죠.
+하지만 `t.__proto__.__proto__`에는 어느 객체의 prototype이 들어갔던걸까요? 방금전 봤던 콘솔을 다시 보겠습니다.
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console4.png)
 
-toString은 Object의 프로토타입입니다. 즉 t의 prototype link(\_\_proto\_\_ 입니다)중 Object가 있는것이죠.
+toString은 Object의 프로토타입입니다. 즉 t의 prototype link(= \_\_proto\_\_ 입니다)중 Object가 있는것이죠.
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console5.png)
 
-그래서 이런식으로 t.\_\_proto\_\_.\_\_proto\_\_ 와 Object의 prototype을 비교하면 true가 나옵니다. Number의 prototype과 비교하면 false가 나오겠습니다.
+그래서 이런식으로 `t.__proto__.__proto__` 와 Object의 prototype을 비교하면 true가 나옵니다. Number의 prototype과 비교하면 false가 나오겠습니다.
 
 ***
 
@@ -105,7 +105,7 @@ toString은 Object의 프로토타입입니다. 즉 t의 prototype link(\_\_prot
 
 그렇다면 Test로 생성된 t는 Object의 프로토타입을 사용할 수 있으니 상속을 받은것일까요?
 
-정답은 그렇습니다.(저는 상속보다는 확장[extend]이 더 올바른 표현이라고 생각합니다)
+정답은 그렇습니다. (저는 상속보다는 확장[extend]이 더 올바른 표현이라고 생각합니다)
 
 저는 이런생각을 했습니다.
 > Object 객체가 아닌, 다른 객체(내가 만든 객체)를 상속해 줄 수는 없을까?
@@ -164,16 +164,16 @@ Animal의 prototype을 강제로 넣어줌으로써 볼트의 울음소리를 �
 
 하지만 이렇게 하면 Object의 prototype을 쓸 수 있을까요?
 
-네! 쓸 수 있습니다 Animal.prototype.\_\_proto\_\_가 Object.prototype이기 때문이죠
+네! 쓸 수 있습니다 `Animal.prototype.__proto__`가 `Object.prototype`이기 때문이죠
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console6.png)
 
 정리하자면 이렇게 되었습니다.
 
 * volt = Dog객체를 생성함.
-* volt.\_\_proto\_\_ = Dog객체의 prototype.
-* volt.\_\_proto\_\_.\_\_proto\_\_ = Animal객체의 prototype.
-* volt.\_\_proto\_\_.\_\_proto\_\_.\_\_proto\_\_ = Object객체의 prototype.
+* `volt.__proto__` = Dog객체의 prototype.
+* `volt.__proto__.__proto__` = Animal객체의 prototype.
+* `volt.__proto__.__proto__.__proto__` = Object객체의 prototype.
 
 이렇게 되어서 volt는 Dog, Animal, Object 들의 prototype을 모두 쓸 수 있는것이죠!
 
