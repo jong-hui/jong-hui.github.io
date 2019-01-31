@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "[Javascript] Promise 순차적 실행"
-subtitle: "Javascript Promise 순차적 싱행"
+subtitle: "Javascript Promise 순차적 실행"
 categories: tech
 tags: javascript promise
 comments: true
 ---
 
 순차적으로 실행되는 promise
-===============
+----------
 
 웹게임을 제작할때 비동기를 사용할 일이 생겼다.
 Promise를 이용하여 제작하던 중 순차적으로 실행시켜야 하는 일이 생겨 해결하던 중
