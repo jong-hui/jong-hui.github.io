@@ -45,6 +45,38 @@ class Test {
 	}
 }
 ```
+클래스에 대한 이야기는 다음에 다루도록 하겠습니다.
+
+
+### 어떻게 다를까?
+
+![javascript_console](\assets\img\posts\prototype&__proto__\console1.png)
+
+Test 객체를 new 키워드로 생성하니 2 + 1을 해주는 함수(이하 B함수)는 \_\_proto\_\_ 안에 들어갔고, 1 + 1을 해주는 함수(이하 A함수)는 사라졌습니다.
+
+그럼 이번엔 조금 다른 코드를 실행해보겠습니다.
+
+![javascript_console](\assets\img\posts\prototype&__proto__\console2.png)
+
+A함수가 \_\_proto\_\_와 같은 위치에 들어갔고, B함수는 proto 안에 있습니다.
+이 상태에서 t.sum() 을 실행시키면 A함수가 실행됩니다.
+
+그렇다면 이번엔 A함수를 정의하지 않고 t.sum() 을 실행시키겠습니다.
+
+![javascript_console](\assets\img\posts\prototype&__proto__\console3.png)
+
+B함수가 실행이되어 3이 리턴됩니다. B함수는 \_\_proto\_\_안에 있는데 어떻게 실행이되고 3이 리턴이된걸까요?
+
+이번엔 좀 다른 예제를 들어보겠습니다.
+
+![javascript_console](\assets\img\posts\prototype&__proto__\console4.png)
+
+이번에도 역시 toString이란 함수는 없지만 정상적으로 실행이 되었습니다.
+
+toString은 Object의 prototype중 하나입니다 [Object.prototype.toString](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
+
+
+### \_\_proto\_\_가 주범.
 
 
 ### 참고한 사이트
