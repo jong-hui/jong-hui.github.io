@@ -80,8 +80,12 @@
   font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
+.head-image img {
+  margin: 0 auto !important;
+}
+
 .markdown-body img {
-  margin-left: auto;
+  /*margin-left: auto;*/
   margin-right: auto;
   max-width: 100%;
   box-sizing: content-box;

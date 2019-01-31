@@ -10,7 +10,7 @@ comments: true
 자바스크립트 프로토타입에 대하여
 ----------
 
-> 프로토타입을 이해한 순간 자바스크립트가 재미있어지고, 마음대로 다룰 수 있다고 생각합니다.
+> 프로토타입을 이해한 순간 자바스크립트가 재미있어지고, 자바스크립트를 마음대로 다룰 수 있다고 생각합니다.
 
 
 ### 문제개요
@@ -48,6 +48,8 @@ class Test {
 클래스에 대한 이야기는 다음에 다루도록 하겠습니다.
 
 
+***
+
 ### 어떻게 다를까?
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console1.png)
@@ -75,9 +77,18 @@ B함수가 실행이되어 3이 리턴됩니다. B함수는 \_\_proto\_\_안에 
 
 toString은 Object의 prototype중 하나입니다 [Object.prototype.toString](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
 
+***
 
-### \_\_proto\_\_가 주범.
+### \_\_proto\_\_가 주범
 
+객체의 prototype은 객체를 생성했을때 \_\_proto\_\_ 안에 들어가게됩니다. 그래서 B함수가 \_\_proto\_\_ 안에 존재하는것이죠.
+
+자바스크립트 객체는 만약 찾는 곳(이 포스팅 에서는 t.sum())이 없다면 \_\_proto\_\_ 에 있는지 확인하고 있다면 찾아주는 것입니다.
+만약 \_\_proto\_\_에도 없다면 \_\_proto\_\_의 \_\_proto\_\_까지 찾게됩니다.
+
+만약 t.\_\_proto\_\_.sum 이 없다면 t.\_\_proto\_\_.\_\_proto\_\_.sum 까지 찾는것이죠. 이게 반복되어 결국 최상위까지 가게되고, undefined를 리턴해줍니다.
+
+그렇다면 t.\_\_proto\_\_는 우리가 Test 생성자에 prototype으로 선언한것들이 들어갔습니다. 하지만 t.\_\_proto\_\_.\_\_proto\_\_에는 어느 객체의 prototype이 들어갔던걸까요?
 
 ### 참고한 사이트
 
