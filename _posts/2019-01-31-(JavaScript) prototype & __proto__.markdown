@@ -61,9 +61,9 @@ Test 객체를 new 키워드로 생성하니 2 + 1을 해주는 함수(이하 B�
 ![javascript_console](\assets\img\posts\prototype&__proto__\console2.png)
 
 A함수가 `__proto__`와 같은 위치에 들어갔고, B함수는 proto 안에 있습니다.
-이 상태에서 t.sum() 을 실행시키면 A함수가 실행됩니다.
+이 상태에서 `t.sum()` 을 실행시키면 A함수가 실행됩니다.
 
-그렇다면 이번엔 A함수를 정의하지 않고 t.sum() 을 실행시키겠습니다.
+그렇다면 이번엔 A함수를 정의하지 않고 `t.sum()` 을 실행시키겠습니다.
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console3.png)
 
@@ -93,11 +93,11 @@ toString은 Object의 prototype중 하나입니다 [Object.prototype.toString](h
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console4.png)
 
-toString은 Object의 프로토타입입니다. 즉 t의 prototype link(= \_\_proto\_\_ 입니다)중 Object가 있는것이죠.
+toString은 Object의 프로토타입입니다. 즉 t의 prototype link(= \_\_proto\_\_)중 Object가 있는것이죠.
 
 ![javascript_console](\assets\img\posts\prototype&__proto__\console5.png)
 
-그래서 이런식으로 `t.__proto__.__proto__` 와 Object의 prototype을 비교하면 true가 나옵니다. Number의 prototype과 비교하면 false가 나오겠습니다.
+그래서 `t.__proto__.__proto__` 와 `Object.prototype을` 비교하면 true가 나옵니다. Number의 prototype과 비교하면 false가 나오겠습니다.
 
 ***
 
@@ -129,7 +129,7 @@ function dog () {
 
 var volt = new dog();
 
-console.log(volt.bark()); // Uncaught TypeError
+volt.bark(); // Uncaught TypeError
 ```
 
 결국 오류가 났습니다. 저는 볼트가 짖는소리를 듣고싶은데 말이죠.
@@ -170,14 +170,18 @@ Animal의 prototype을 강제로 넣어줌으로써 볼트의 울음소리를 �
 
 정리하자면 이렇게 되었습니다.
 
-* volt = Dog객체를 생성함.
+* `volt` = 생성된 Dog객체.
 * `volt.__proto__` = Dog객체의 prototype.
 * `volt.__proto__.__proto__` = Animal객체의 prototype.
 * `volt.__proto__.__proto__.__proto__` = Object객체의 prototype.
 
 이렇게 되어서 volt는 Dog, Animal, Object 들의 prototype을 모두 쓸 수 있는것이죠!
 
+***
 
+### 문제해결
+
+문제는 해결되지 않은것같다 아직도 자바스크립트가 이해가 잘 안된다. 더욱 더 공부를많이해야겠다.
 
 
 ### 참고한 사이트

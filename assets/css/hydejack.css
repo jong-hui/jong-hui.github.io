@@ -110,7 +110,7 @@
 }
 
 .markdown-body pre>code {
-  color: #333;
+  color: #d8d6d7;
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -135,6 +135,7 @@
 }
 
 .markdown-body .highlight pre {
+  background: #403a3a;
   margin-bottom: 0;
   word-break: normal;
 }

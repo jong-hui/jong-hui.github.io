@@ -19,7 +19,7 @@ Promise를 이용하여 제작하던 중 순차적으로 실행시켜야 하는 
 
 ***
 
-### 사건개요
+### 문제개요
 
 ![pang-1](/assets/img/posts/promise-pang/1.PNG)
 
@@ -58,7 +58,7 @@ this.viewFruit().then(() => {
 
 *** 
 
-### 사건해결
+### 문제해결
 
 난 [Array.prototype.reduce](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)를 사용하여 이 문제를 해결했다.
 
@@ -95,3 +95,8 @@ Promise.seque([
 	resolve(1);
 });
 ~~~
+
+
+### 참고한 사이트
+
+<https://eunvanz.github.io/javascript/2018/01/30/ES6%EC%97%90%EC%84%9C-Promise%EB%A5%BC-%EC%88%9C%EC%B0%A8%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/>
