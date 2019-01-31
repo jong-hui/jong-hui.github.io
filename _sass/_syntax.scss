@@ -3,7 +3,7 @@
  * Courtesy of GitHub.com
  */
 
- 
+
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
@@ -204,28 +204,8 @@ default.min.css overriding
 
 */
 
-.hljs-keyword {
-font-weight: normal !important;
-}
-
-.hljs-title {
-font-weight: normal !important;
-}
-
-.hljs-name {
-font-weight: normal !important;
-}
-
-.hljs-attribute {
-font-weight: normal !important;
-}
-
-.hljs-selector-tag {
-font-weight: normal !important;
-}
-
-.hljs-section {
-font-weight: normal !important;
+.highlight pre code {
+	tab-size : 4;
 }
 
 // .highlight .c { color: #999988; font-style: italic; }
