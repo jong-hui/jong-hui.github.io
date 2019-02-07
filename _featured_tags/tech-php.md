@@ -3,7 +3,7 @@ layout: tag-blog
 title: php
 slug: php
 category: tech
-menu: false
+menu: true
 order: 1
 
 ---

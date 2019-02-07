@@ -3,7 +3,7 @@ layout: tag-blog
 title: javascript
 slug: javascript
 category: tech
-menu: false
+menu: true
 order: 1
 
 ---

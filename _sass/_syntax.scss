@@ -204,6 +204,13 @@ default.min.css overriding
 
 */
 
+.language-php .highlight .cp {
+	color: #ffffff;
+}
+.language-php .highlight .nb {
+	color: #11dff6;
+}
+
 .highlight pre code {
 	tab-size : 4;
 }

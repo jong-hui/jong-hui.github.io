@@ -51,7 +51,7 @@ php로 달력을 만든다는 것은 아주 기초적인 일입니다.
 그러니 가지고 있는 값을 *현재 날짜*로 정하겠습니다.  
 저희는 php에서 현재 날짜를 가질 수 있게 코딩 해야겠네요.
 
-**
+***
 
 ### 가지고 있는 값
 
@@ -153,7 +153,7 @@ localhost에 접속하시면 이렇게 작동합니다.
 ```
 
 ### 결과
-![결과](https://jong-hui.github.io/assets/img/posts/calendar/result.png)
+![결과](https://jong-hui.github.io/assets/img/posts/calendar/result.PNG)
 해당 소스를 실행시킨 결과입니다.
 
 
