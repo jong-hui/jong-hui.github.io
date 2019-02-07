@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "블로깅 할만한 것 들"
+title: "블로깅 할만한 것들"
 subtitle: "나중에 블로깅 할 것들"
 categories: talk
 tags: post
 comments: true
 ---
+
+### 블로깅 할 것들
 
 - 라라벨 브로드캐스트를 이용한 realtime chat
 - Vue 컴포넌트 적용
