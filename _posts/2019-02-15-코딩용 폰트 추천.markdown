@@ -1,0 +1,21 @@
+---
+layout: post
+title: "코딩용 폰트 추천"
+subtitle: "코딩할때 쓰기 좋은 폰트추천"
+categories: tech
+tags: javascript copy shallowcopy deepcopy
+comments: true
+header-img: "https://jong-hui.github.io/assets/img/posts/font_monaco/1.png"
+---
+
+## 코딩시 사용하기 좋은 폰트 추천
+
+### Monaco
+
+Monaco 폰트는 사용할때 눈이 편안하고 소문자 l(엘)과 1(일)이 구분이 잘 갑니다.  
+또한 이 폰트의 매력이라고 할 수 있는 동그란 괄호가 참 예쁩니다.  
+참고로 이 폰트는 Mac의 기본폰트에요.
+
+> [폰트 다운로드](http://www.gringod.com/2006/11/01/new-version-of-monaco-font/)
+
+코딩용 글꼴 10위중 8위를 한 글꼴이기도 합니다. 괄호가 참 매력적이에요.
