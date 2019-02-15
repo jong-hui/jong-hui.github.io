@@ -70,9 +70,9 @@ es6이후에는 `var`를 볼일이 없어질 수도 있다.
 
 #### 실사용
 
-es6이후로 var는 거의 찾아볼 수가 없고(사용하는 상황이 있긴있다.) 대부분 const 혹은 let을쓴다.  
-대부분의 변수는 const로 선언하고, 변경되어야 하는 수면 let을쓴다.  
-변수를 let으로 선언하는 것보다 const로 선언하는 편이 코드를 보거나 디버깅할때 더 좋기때문이다.
+es6이후로 `var`는 거의 찾아볼 수가 없고(사용하는 상황이 있긴있다.) 대부분 `const` 혹은 `let`을쓴다.  
+대부분의 변수는 `const`로 선언하고, 변경되어야 하는 수면 `let`을쓴다.  
+변수를 `let`으로 선언하는 것보다 `const`로 선언하는 편이 코드를 수정, 디버깅할때 더 좋기때문이다.
 
 
 ***
@@ -104,7 +104,7 @@ const add = (a, b) => a + b;
 console.log(add(1, 2)) // 3
 ```
 함수 표현을 `function() {}`을 `() => {}`이런식으로 대체했습니다. 놀랍지 않나요?
-위의 예제를 보면 중괄호를 쓰지 않았을 시에는 return도 생략이 가능합니다. 좀 더 예를 들어보죠.
+위의 예제를 보면 중괄호를 쓰지 않았을 시에는 `return`도 생략이 가능합니다. 좀 더 예를 들어보죠.
 
 `es6`
 ```javascript
@@ -120,12 +120,12 @@ console.log(total); // 16
 사실 화살표 함수는 기존의 표현식을 완전히 대체하는 것은 아닙니다. 몇가지 특징들이 있죠.
 
 화살표 함수는 모두 
-1. this를 바인딩 하지않습니다.
+1. `this`를 바인딩 하지않습니다.
 2. 항상 익명함수 입니다.
-3. new 키워드로 생성할 수 없습니다.
+3. `new` 키워드로 생성할 수 없습니다.
 
 1번의 의미는 화살표 함수내에서 화살표 함수 자신을 가르키지 못한다는 말입니다.  
-3번은 this를 바인딩 하지 않기때문에 new 키워드로 사용 못하겠죠?
+3번은 `this`를 바인딩 하지 않기때문에 `new` 키워드로 사용 못하겠죠?
 
 1번에 대한 예를 들어보죠.
 
@@ -138,8 +138,8 @@ obj.getAlert = function() {
 
 console.log(obj.getAlert()) // undefined
 ```
-위 코드를 실행하면 undefined가 뜹니다. getAlert에서의 this는 자기자신인 obj객체를 가르키기 때문이죠.  
-obj객체에 alert가 없기때문에 undefined, 찾지 못하였다고 하는 것입니다.
+위 코드를 실행하면 `undefined`가 뜹니다. `getAlert`에서의 `this`는 자기자신인 `obj`객체를 가르키기 때문이죠.  
+`obj`객체에 `alert`가 없기때문에 `undefined`, 찾지 못하였다고 하는 것입니다.
 
 `es6`
 ```javascript
@@ -150,8 +150,8 @@ obj.getAlert = () => {
 
 console.log(obj.getAlert()) // ƒ alert() { [native code] } (window.alert 입니다)
 ```
-이 코드에서는 다릅니다. getAlert에서의 this는 자기자신(obj)를 가르키지않고 보다 상위의 this를 가져옵니다.  
-그렇기때문에 보다 상위, 그러니까 전역객체(브라우저에서는 window입니다)의 alert를 리턴하게 되는 것입니다.
+이 코드에서는 다릅니다. getAlert에서의 this는 자기자신(`obj`)를 가르키지않고 보다 상위의 `this`를 가져옵니다.  
+그렇기때문에 보다 상위, 그러니까 전역객체(브라우저에서는 `window`입니다)의 `alert`를 리턴하게 되는 것입니다.
 
 `es6`
 ```javascript
@@ -166,7 +166,7 @@ obj.getAlert = function() {
 
 console.log(obj.getAlert()) // undefined
 ```
-위 예제에서는 undefined가 나옵니다.
+위 예제에서는 `undefined`가 나옵니다.
 
 
 
