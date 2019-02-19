@@ -2,7 +2,7 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title:               천종희
+title:               학생의 웹 개발 블로그
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
@@ -13,12 +13,12 @@ url:                 https://jong-hui.github.io
 baseurl:             ""
 
 # A very short description of your page
-tagline:             천종희
+tagline:             배우고 있는 사람의 기술 저장 블로그입니다.
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  고등학생 천종희입니다.
+  웹을 배우는 학생 천종희입니다.
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
