@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jong-hui.github.io/sitemap.xml
