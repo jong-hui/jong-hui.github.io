@@ -1,3 +1,12 @@
+---
+layout: post
+title: "내가 해야 하는 것"
+subtitle: "내가 해야 하는 것 정리"
+categories: talk
+tags: post
+comments: true
+---
+
 # 내가 해야 하는 것
 
 내가 지금 해야 하는 것이 뭘까요.  
@@ -63,9 +72,11 @@ aws를 해본적이 별로 없어요. ec2 인스턴스를 생성하고 끄는거
 글을 하나하나 작성할때마다 내 말투가 바뀌는것같다.
 어떨때는 ~입니다, 또 어떨때는 ~다.
 하나로 통일해야겠다.
+
 그래서 지금 ~다로 작성한 이 글을 ~입니다로 다 바꿔서 좀 어색할 수 있습니다.
+
 확실히 저한테는 ~다가 더 편한데. ~입니다가 더 공손해 보인다.
 ~입니다를 쓸때 문장이 어색해 보이지 않으려면 어쩔 수 없이 겸손해지는 문장을 가져야 하는것같다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzODM5MDYwN119
+eyJoaXN0b3J5IjpbLTc4NTgyODY5MSwtODM4MzkwNjA3XX0=
 -->
