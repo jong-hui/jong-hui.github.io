@@ -13,7 +13,7 @@ url:                 https://jong-hui.github.io
 baseurl:             ""
 
 # A very short description of your page
-tagline:             기술 저장 블로그입니다.
+tagline:             기술 저장 블로그
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
