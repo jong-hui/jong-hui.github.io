@@ -2,7 +2,7 @@
 layout: tag-blog
 title: php
 slug: php
-category: develog
+category: devlog
 menu: false
 order: 1
 
