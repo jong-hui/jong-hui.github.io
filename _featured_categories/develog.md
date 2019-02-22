@@ -1,9 +1,9 @@
 ---
 layout: list
-title: Tech
+title: Develog
 slug: tech
 menu: true
-submenu: false
+submenu: true
 order: 3
 description: >
   기술들을 담아두는 곳.

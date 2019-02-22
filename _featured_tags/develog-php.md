@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: pattern
-slug: pattern
-category: tech
+title: php
+slug: php
+category: develog
 menu: false
 order: 1
 

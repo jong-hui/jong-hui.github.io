@@ -2,7 +2,7 @@
 layout: post
 title: "클린코드 리팩토링 정리"
 subtitle: "클린코드와 리팩토링에 대하여"
-categories: tech
+categories: develog
 tags: clean-code refactoring javascript
 comments: true
 ---

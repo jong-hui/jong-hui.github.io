@@ -2,7 +2,7 @@
 layout: post
 title: "[Javascript] ES6 문법 (1)"
 subtitle: "Javascript ECMAScript6 문법"
-categories: tech
+categories: develog
 tags: javascript ECMAScript ES6
 comments: true
 ---

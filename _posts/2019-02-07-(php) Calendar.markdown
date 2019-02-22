@@ -2,7 +2,7 @@
 layout: post
 title: "[php] php를 이용해서 달력 만들기"
 subtitle: "php를 이용해서 달력 만들기"
-categories: tech
+categories: develog
 tags: php calendar 기초
 comments: true
 header-img: "/img/posts/calendar/main.png"
