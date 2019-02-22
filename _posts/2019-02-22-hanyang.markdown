@@ -18,7 +18,7 @@ comments: true
 
 ## 볼트-너트 쌍
 
-![1번문제](https://picasaweb.google.com/115317603000851382076/6660648793029275681#6660648794114449058)
+![1번문제](https://jong-hui.github.io/assets/img/posts/sw/1번문제.png)
 
 ### 들어가기 전
 - 비교는 나올 수 있는 최대값을 기준으로 했습니다.  
