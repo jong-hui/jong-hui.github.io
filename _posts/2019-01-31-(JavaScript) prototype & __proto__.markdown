@@ -2,7 +2,7 @@
 layout: post
 title: "[Javascript] Prototype과 __proto__의 이해"
 subtitle: "오브젝트의 prototype 이해"
-categories: develog
+categories: devlog
 tags: javascript prototype __proto__
 comments: true
 ---

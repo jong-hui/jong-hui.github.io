@@ -2,7 +2,7 @@
 layout: post
 title: "[Javascript] Promise 순차적 실행"
 subtitle: "Javascript Promise 순차적 실행"
-categories: develog
+categories: devlog
 tags: javascript promise
 comments: true
 ---
