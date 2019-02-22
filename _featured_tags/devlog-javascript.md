@@ -1,5 +1,5 @@
 ---
-layout: tag-blog
+layout: list
 title: javascript
 slug: javascript
 category: devlog
