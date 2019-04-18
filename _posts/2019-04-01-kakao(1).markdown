@@ -1,0 +1,87 @@
+---
+
+
+---
+
+<hr>
+<h2 id="layout-posttitle-2019-카카오-신입-공채-1차subtitle-2019-카카오-신입-공채-1차-코딩-테스트-문제categories-devlogtags-thinking-algorithmcomments-true">layout: post<br>
+title: “2019 카카오 신입 공채 1차”<br>
+subtitle: “2019 카카오 신입 공채 1차 코딩 테스트 문제”<br>
+categories: devlog<br>
+tags: thinking algorithm<br>
+comments: true</h2>
+<h1 id="카카오-코딩-테스트-문제">카카오 코딩 테스트 문제</h1>
+<h2 id="들어가기-전">들어가기 전</h2>
+<ul>
+<li>문제들은 모두 카카오 기술블로그 <a href="http://tech.kakao.com/2018/09/21/kakao-blind-recruitment-for2019-round-1/">게시글</a>을 보았습니다.</li>
+<li>모든 문제들의 풀이는 읽지 않았습니다.</li>
+<li>문제들의 설명은 <a href="http://tech.kakao.com/2018/09/21/kakao-blind-recruitment-for2019-round-1/">게시글</a>을 참고하여주세요.</li>
+<li>자바스크립트를 이용하였습니다.</li>
+<li>언급하는 내용들은 <code>Place 0</code>형식으로 나타냅니다. 주석에 표기되어 있습니다.</li>
+</ul>
+<pre class=" language-css"><code class="prism  language-css"><span class="token selector"><span class="token id">#post-content</span> blockquote </span><span class="token punctuation">{</span> <span class="token property">display</span> <span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span> // 문제풀이 텍스트가 보이지 않습니다<span class="token number">.</span>
+</code></pre>
+<h2 id="오픈채팅방">1. 오픈채팅방</h2>
+<p><code>정답률 59.91%</code></p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> labels <span class="token operator">=</span> <span class="token punctuation">{</span>
+        Enter <span class="token punctuation">:</span> <span class="token string">"들어왔습니다."</span><span class="token punctuation">,</span>
+        Leave <span class="token punctuation">:</span> <span class="token string">"나갔습니다."</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">const</span> names <span class="token operator">=</span> record
+        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">"Leave"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>names<span class="token punctuation">,</span> line<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> <span class="token punctuation">[</span>command<span class="token punctuation">,</span> uid<span class="token punctuation">,</span> name<span class="token punctuation">]</span> <span class="token operator">=</span> line<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>command <span class="token operator">==</span> <span class="token string">"Leave"</span> <span class="token operator">|</span> <span class="token operator">!</span>name<span class="token punctuation">)</span> <span class="token keyword">return</span> names<span class="token punctuation">;</span>
+
+            names<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">=</span> name<span class="token punctuation">;</span>
+
+            <span class="token keyword">return</span> names<span class="token punctuation">;</span> <span class="token comment">// Place 1</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> record
+            <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">"Change"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>results<span class="token punctuation">,</span> line<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">let</span> <span class="token punctuation">[</span>command<span class="token punctuation">,</span> uid<span class="token punctuation">]</span> <span class="token operator">=</span> line<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                
+                results<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>names<span class="token punctuation">[</span>uid<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">님이 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>labels<span class="token punctuation">[</span>command<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">return</span> results<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>문제를 읽고 바로 어떻게 풀어야 할지 생각이 났다.<br>
+첫 번째 문제답게 다른 문제들보다도 쉬운 문제였기 때문에 큰 고민없이 풀었다.<br>
+처음 제출에서 <code>Place 1</code>에서 <code>return {...names, [uid] : name}</code>이라 작성하였는데, 시간 초과로 몇몇 테스트케이스에서 실패하였다.<br>
+이정도 차이는 괜찮은줄 알았는데, 객체를 뿌려주고 또 만들어주는데에 생각보다 많은 자원이 필요한 것 같다.</p>
+<h2 id="실패율">2. 실패율</h2>
+<p><code>정답률 55.57%</code></p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> stages<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> users <span class="token operator">=</span> stages<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> ns <span class="token operator">=</span> <span class="token function">Array</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> k<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>k<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+    stages<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> k<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token operator">&gt;</span> N<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        ns<span class="token punctuation">[</span>v<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token number">0</span>     
+    <span class="token keyword">return</span> ns<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        x<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>users <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">/</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Place 1</span>
+        users <span class="token operator">=</span> users <span class="token operator">-</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	    <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">==</span> b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">?</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">:</span>  b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">-</span> a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// Place 2</span>
+	    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>   
+</code></pre>
+<p>첫 번째 문제와 같게 꽤나 쉬운 난이도의 문제였다.<br>
+예외처리 부분에서 좀 애를 먹기는 하였다.<br>
+<code>Place 2</code>는 원래 <code>b[2] - a[2]</code>였다. 테스트 해보니 55% 정도가 나왔었다.<br>
+같은 실패율에 대해 처리를 안해준 문제였는데, <code>[4, 1, 2, 3]</code>에 대한 케이스는 성공하여 그대로 냈었다.<br>
+위와 같이 예외처리를 해준다면 완성도가 올라간다.<br>
+<code>Place 1</code>부분은 원래 <code>x[1]/users</code>였는데, 자바스크립트에서는 <code>0/0</code>을 연산하면 NaN(Not-A-Number)이떠서 예외처리를 해 주었다. 해주니 80%에서 100%로 올라가 성공하였다.</p>
+<h2 id="외부링크">외부링크</h2>
+<p><a href="http://tech.kakao.com/2018/09/21/kakao-blind-recruitment-for2019-round-1/">http://tech.kakao.com/2018/09/21/kakao-blind-recruitment-for2019-round-1/</a></p>
+
