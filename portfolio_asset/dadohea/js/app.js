@@ -284,7 +284,7 @@ const Marker = {
 		$(".area__text").text(data.area+"㎢");
 		$(".population__text").text(data.population);
 		$(".box__note").text(data.note);
-		$(".box__img").attr('src', data.img);
+		$(".box__img").attr('src', "/portfolio_asset/dadohea"+data.img);
 
 		Marker.refresh();
 	},
