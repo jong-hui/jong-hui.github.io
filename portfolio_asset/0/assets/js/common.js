@@ -224,5 +224,7 @@ const App = {
 
 
 $(function() {
-	App.init();
+	setTimeout(function() {
+		App.init();
+	}, 5000);
 });
