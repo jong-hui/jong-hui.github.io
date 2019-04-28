@@ -1,0 +1,35 @@
+* { padding: 0; margin: 0; list-style: none; font-family: '나눔고딕',sans-serif; }
+.header { width: 100%; height: 100px; background-color: #293e6a; color: #fff; text-align: center; line-height: 100px; font-size: 5em; font-family: '포천 막걸리체','나눔 고딕',sans-serif; }
+.wrap { width: 100%; height: calc(100vh - 100px); position: relative; font-size: 0; vertical-align: middle; }
+
+.wrap__sideBar { width: 400px; height: 100%; overflow-y: scroll; background-color:  #3b5998; color: #fff; font-size: 1rem; display: inline-block; position: relative; z-index: 999; }
+.sideBar__search { width: 100%; height: 60px; background-color: #293e6a; text-align: center; line-height: 60px; }
+.search__input { width: 90%; height: 40px; vertical-align: middle; box-sizing: border-box; padding: 5px 15px; outline: none; background-color: #102043; border: none; border-radius: 15px; font-size: 1.3em; color: #fff; }
+.search__input:focus { border: 1px solid #3b5998;  }
+.sideBar__favorite { width: 100%; font-size: 1.3em; }
+.sideBar__list { width: 100%; font-size: 1.3em; }
+
+.favorite__title { background-color: #293e8a; padding: 10px 10px; position: relative; cursor: pointer; user-select: none; }
+.favorite__title:hover { background-color: #102042; }
+.ele__title { background-color: #293e8a; padding: 10px 10px; position: relative; cursor: pointer; user-select: none; }
+.ele__title:hover { background-color: #102042; }
+.drop__list { padding: 5px 15px; position: relative; cursor: pointer; user-select: none; }
+.drop__list:hover { background-color: #74aaf6; }
+.drop__list--active { padding: 5px 15px; position: relative; cursor: pointer; background-color: #74aaf6; user-select: none; }
+
+.fa-caret-down { position: absolute; right: 15px; top: 15px; }
+.fa-caret-up { position: absolute; right: 15px; top: 15px; }
+.fa-star { position: absolute; right: 10px; top: 10px; }
+
+.wrap__main { width: calc(100% - 400px); display: inline-block; height: calc(100vh - 100px); vertical-align: top; position: relative; overflow: hidden; }
+.main__map {  }
+.main__minimap { position: absolute; right: 100px; bottom: 80px; border: 1px solid #000; cursor: pointer; z-index: 999; }
+.main__box { width: 500px; position: absolute; left: 0; top: 0; background-color: #fff; font-size: 1rem; user-select: none; }
+.box__title { border-bottom: 3px solid #aaa; margin: 20px; }
+.title__text--big { font-size: 2em; font-weight: bold; font-family: '포천 막걸리체','나눔 고딕','Nanum-gothic',sans-serif; }
+.title__favorite { position: absolute; top: 25px; right: 25px; }
+.box__img { margin-left: 0px; float: right; margin-right: 20px; padding-left: 10px; }
+.box__location { margin-left: 20px; margin-top: 5px; font-size: 1em; }
+.box__area { margin-left: 20px; margin-top: 5px; font-size: 1em; }
+.box__population { margin-left: 20px; margin-top: 5px; font-size: 1em; }
+.box__note { margin: 5px 20px 20px 20px; font-size: 1em; }

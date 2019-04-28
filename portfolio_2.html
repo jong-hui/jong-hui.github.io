@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>다도해 해상 국립공원</title>
+	<link rel="stylesheet" type="text/css" href="/portfolio_asset/dadohea/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/portfolio_asset/dadohea/fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.min.css">
+</head>
+<body>
+	<header class="header">다도해 해상국립공원</header>
+	<div class="wrap">
+		<div class="wrap__sideBar">
+			<div class="sideBar__favorite">
+				<div class="favorite__title">
+					<span class="title__text">즐겨찾기</span>
+					<i class="title__toggle fa fa-caret-up fa-flip-vertical"></i>
+				</div>
+				<div class="favorite__drop">
+					<div class="drop__list">
+						<span class="list__title">섬1</span>
+						<i class="list__star far fa-star"></i>
+					</div>
+					<div class="drop__list">
+						<span class="list__title">섬5</span>
+						<i class="list__star far fa-star"></i>
+					</div>
+					<div class="drop__list">
+						<span class="list__title">섬6</span>
+						<i class="list__star far fa-star"></i>
+					</div>
+				</div>
+			</div>
+			<ul class="sideBar__list">
+			</ul>
+		</div>
+		<div class="wrap__main">
+			<canvas class="main__map" style="min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%"></canvas>
+			<div class="redbox"></div>
+			<canvas class="main__minimap" width="360" height="150"></canvas>
+			<div class="main__box" style="display: none;">
+				<div class="box__title">
+					<span class="title__text--big">영종도</span>
+					<i class="title__favorite fa-lg far fa-star"></i>
+				</div>
+				<img class="box__img" src="/portfolio_asset/dadohea/imgs/다물도.jpg" width="200" />
+				<div class="box__location">흑산·홍도지구</div>
+				<div class="box__area">면적 : <span class="area__text">1.62㎢</span></div>
+				<div class="box__population">인구 : 약 <span class="population__text">325</span> 명</div>
+				<div class="box__note">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sequi ad, est, a asperiores harum consequatur repellendus pariatur vitae. Dolor aut pariatur perspiciatis quibusdam doloremque dicta, ex aperiam magni harum.</div>
+			</div>
+		</div>
+	</div>
+	<img src="/imgs/maps/1.6.png" hidden="">
+	<img src="/imgs/maps/3.2.png" hidden="">
+	<img src="/imgs/maps/6.4.png" hidden="">
+	<style type="text/css">
+		.main__box {
+			z-index: 900;
+		}
+		.redbox {
+			position: absolute;
+			right: 100px;
+			width: 100px;
+			height: 200px;
+			top: 80px;
+			z-index: 10000;
+			max-width: 360px;
+			max-height: 150px;
+			pointer-events: none;
+		}
+		.marker {
+			background: url("/portfolio_asset/dadohea/imgs/marker.png") no-repeat 0 0 / 100% 100%;
+			width: 20px;
+			height: 25px;
+			position: absolute;
+			transform-origin: 50% 100%;
+		}
+		.scale {
+			transform: scale(1.5)
+		}
+		.fa-star.fa {
+			color: yellow;
+		}
+	</style>
+	<script type="text/javascript" src="/portfolio_asset/dadohea/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/portfolio_asset/dadohea/js/app.js"></script>
+</body>
+</html>
