@@ -1,0 +1,303 @@
+
+#app {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#pages {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition: 0.5s;
+	left: 0;
+	top: 0;
+}
+
+#loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: white;
+}
+
+.loading {
+	opacity: 0;
+}
+
+#bar {
+	width: 5000px;
+	height: 10vh;
+	background: #5a90ff;
+	position: absolute;
+	left: -27.33%;
+	top: 27.33%;
+	transform: rotate(12deg);
+}
+
+#pages > div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+	background: white;
+	box-shadow: 0px 0px 50px rgba(0,0,0,0.2);
+}
+
+.page1 {
+	z-index: 5;
+	background: url("../imgs/page1.png") center / cover !important;
+}
+
+.page2 {
+	background: #edf0f6 !important;
+}
+.page3 {
+	background: #0b0b0f !important;
+}
+
+/*.page2 {
+	background: yellow;
+}
+.page3 {
+	background: green;
+}*/
+
+.lds-grid {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+}
+.lds-grid div {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000;
+  animation: lds-grid 1.2s linear infinite;
+}
+.lds-grid div:nth-child(1) {
+  top: 6px;
+  left: 6px;
+  animation-delay: 0s;
+}
+.lds-grid div:nth-child(2) {
+  top: 6px;
+  left: 26px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(3) {
+  top: 6px;
+  left: 45px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(4) {
+  top: 26px;
+  left: 6px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(5) {
+  top: 26px;
+  left: 26px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(6) {
+  top: 26px;
+  left: 45px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(7) {
+  top: 45px;
+  left: 6px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(8) {
+  top: 45px;
+  left: 26px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(9) {
+  top: 45px;
+  left: 45px;
+  animation-delay: -1.6s;
+}
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+
+.page1_typo {
+	color: white;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.page1_typo.fades > * {
+	opacity: 1;
+}
+
+.page1_typo > * {
+	display: block;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	opacity: 0;
+	transition: 1s;
+}
+
+.page1_typo > h2 {
+	font-family: "ggj";
+	top: 15%;
+	font-size: 4em;
+}
+.page1_typo > h4 {
+	top: 43%;
+	font-size: 2.4em;
+	font-family: "ggjM";
+}
+.page1_typo > p {
+	font-size: 1.3em;
+	min-width: 600px;
+	max-width: 100%;
+	width: 32%;
+	top: 51%;
+}
+.more_story {
+	position: absolute;
+	top: 80%;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+.scroll {
+	display: inline-block;
+	width: 24px;
+	height: 53px;
+	background: url("../imgs/scroll.png");
+}
+
+.page3_title {
+	color: white;
+}
+.page2_title,
+.page3_title {
+	position: absolute;
+	left: 50%;
+	top: 13%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.page2_title h2,
+.page3_title h2 {
+	font-size: 50px;
+}
+.page2_container {
+	position: absolute;
+	width: 90%;
+	left: 50%;
+	top: 57%;
+	transform: translate(-50%, -50%);
+	/*background: white;*/
+	height: 67%;
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid #ededed;
+}
+.page2_container > div {
+	width: 22%;
+	padding-top: 60px;
+	font-size: 18px;
+}
+
+.page2_container > div h3 {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.page2_container > div p {
+	margin-bottom: 0.3rem;
+}
+.page2_container > div ul {
+	padding-left: 20px;
+	padding-bottom: 2em;
+}
+.page2_container > div ul li {
+	padding-bottom: 0.4em;
+}
+.myimage {
+	width: 90%;
+	background: white;
+	padding: 9px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+.myimage img {
+	width: 100%;
+}
+
+.page2 .more_story {
+	top: 90%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.grid-sizer {
+	width: 25%;
+}
+.grid {
+	background: #0b0b0f !important;
+}
+.grid-item { width: 480px; position: relative; }
+.grid-item--width2 { width: 620px; }
+
+.portfoilios {
+	position: absolute;
+	top: 25%;
+	width: 100%;
+}
+
+.portfoilios .grid > div:hover {
+	transform: translateY(-4px);
+	opacity: 0.8;
+}
+
+.portfoilios .grid > div {
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.port_img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.port_text {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	color:white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+

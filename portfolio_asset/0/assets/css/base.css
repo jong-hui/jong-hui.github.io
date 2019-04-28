@@ -1,0 +1,92 @@
+@font-face {
+	font-family: "Nanum Square";
+	src : url("../font/NanumSquareR.woff");
+}
+
+@font-face {
+	font-family: "Nanum SquareL";
+	src : url("../font/NanumSquareL.woff");
+}
+
+@font-face {
+	font-family: "Nanum SquareB";
+	src : url("../font/NanumSquareB.woff");
+}
+
+@font-face {
+	font-family: "Nanum SquareEB";
+	src : url("../font/NanumSquareEB.woff");
+}
+
+@font-face {
+	font-family: "ggb";
+	src : url("../font/경기천년바탕_Regular.ttf");
+}
+
+@font-face {
+	font-family: "ggbB";
+	src : url("../font/경기천년바탕_Bold.ttf");
+}
+
+@font-face {
+	font-family: "ggj";
+	src : url("../font/경기천년제목_Light.ttf");
+}
+
+@font-face {
+	font-family: "ggjB";
+	src : url("../font/경기천년제목_Bold.ttf");
+}
+
+@font-face {
+	font-family: "ggjM";
+	src : url("../font/경기천년제목_Medium.ttf");
+}
+
+
+body {
+	font-family: 'ggj', sans-serif;
+	overflow-x: hidden;
+	font-size: 16px;
+}
+
+li {
+}
+
+.container-rap {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+	body {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		font-size: ;
+	}
+}
+
+@media (max-width: 576px) {
+	body {
+		font-size: ;
+	}
+}
+
+@media (max-width: 1200px) {
+	body {
+		font-size: ;
+	}
+}
+
+.closeup {
+	height: 0 !important;
+}
+
+.scrollLock {
+	overflow: hidden;
+}
+
