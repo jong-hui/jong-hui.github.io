@@ -107,6 +107,13 @@ const Screen = {
 					'transition-delay' : '1s'
 				});
 
+				if (Screen.page === 2) {
+					$(".grid").masonry({
+						itemSelector : ".grid-item",
+						columnWidth : 480
+					});
+				}
+
 				setTimeout(function() {
 					Screen.addDelay();
 
@@ -145,32 +152,32 @@ const App = {
 		{
 			title : "개인 개발 블로그",
 			link : "https://jong-hui.github.io/",
-			img : "/portfolio_asset/0/portfolio/1/캡처.PNG"
+			img : "portfolio/1/캡처.PNG"
 		},
 		{
 			title : "깃허브",
 			link : "https://github.com/jong-hui",
-			img : "/portfolio_asset/0/portfolio/2/캡처.PNG"
+			img : "portfolio/2/캡처.PNG"
+		},
+		{
+			title : "여수 소개페이지 앱 (대회과제)",
+			link : "portfolio/3/index.html",
+			img : "portfolio/3/캡처.PNG"
 		},
 		{
 			title : "Fruits Pang 게임",
 			link : "https://jong-hui.github.io/fruitsPang",
-			img : "/portfolio_asset/0/portfolio/4/캡처.PNG"
-		},
-		{
-			title : "여수 소개페이지 앱 (대회과제)",
-			link : "https://jong-hui.github.io/portfolio_1",
-			img : "/portfolio_asset/0/portfolio/3/캡처.PNG"
+			img : "portfolio/4/캡처.PNG"
 		},
 		{
 			title : "여수 지도 앱 (대회과제)",
 			link : "https://jong-hui.github.io/portfolio_2",
-			img : "/portfolio_asset/0/portfolio/5/캡처.PNG"
+			img : "portfolio/5/캡처.PNG"
 		},
 		{
 			title : "제주 아트 센터 페이지 (대회과제)",
 			link : "https://jong-hui.github.io/portfolio_3",
-			img : "/portfolio_asset/0/portfolio/6/캡처.PNG"
+			img : "portfolio/6/캡처.PNG"
 		}
 	],
 
@@ -189,13 +196,6 @@ const App = {
 				</div>
 			`);
 		});
-
-		setTimeout(function() {
-			$(".grid").masonry({
-				itemSelector : ".grid-item",
-				columnWidth : 480
-			});
-		}, 500);
 
 		App.hook();
 		Screen.init();
@@ -223,4 +223,6 @@ const App = {
 }
 
 
-$(App.init);
+$(function() {
+	App.init();
+});
