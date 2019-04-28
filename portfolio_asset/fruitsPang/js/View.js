@@ -39,7 +39,7 @@ class View {
 		let promiseArray = [];
 
 		svg$.each((a, b) => {
-			let url = `imgs/${$(b).data('svg-name')}`;
+			let url = `/portfolio_asset/fruitsPang/imgs/${$(b).data('svg-name')}`;
 
 			promiseArray.push( $.ajax({ url : url }));
 		});
@@ -52,7 +52,7 @@ class View {
 	}
 
 	gameBoardInit () {
-		$("#game-timer-svg").prepend("<div class='progress'> <div> <img src='/imgs/bar-top.png' /> </div> </div>");
+		$("#game-timer-svg").prepend("<div class='progress'> <div> <img src='/portfolio_asset/fruitsPang/imgs/bar-top.png' /> </div> </div>");
 	}
 
 	changePage (curPage) {
