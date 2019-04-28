@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/aniamte.css">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<div id="loading">
+		<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+	</div>
+
+	<div id="wrap" class="loading">
+		<div id="overrap">
+			<div>3</div>
+			<div>2</div>
+			<div>1</div>
+			<div>START!</div>
+		</div>
+		<div id="inner">
+
+			<!--start-->
+			<div id="start">
+				<!--start svg-->
+				<div id="start-svg" data-svg-name="start.svg">
+					<div id="start-form">
+						<form>
+							<div><input type="text" id="nickname" placeholder="Nickname"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			<!--game-->
+			<div id="game">
+				<!--game data svg-->
+				<div id="game-data-svg" data-svg-name="game-info.svg">
+					<h2 id="text-stage">STAGE 1</h2>
+					<h2 id="text-nickname">JOHN DOE</h2>
+					<h2 id="text-score">1,500</h2>
+				</div>
+				<!--timer svg-->
+				<div id="game-timer-svg" data-svg-name="timer.svg">
+				</div>
+				<!--game boards-->
+				<div id="game-boards-svg" data-svg-name="game-boards.svg">
+					<div id="game-board-items">
+<!-- 						<div class="item1"><img src="imgs/fruit-apple.png" alt="apple"></div>
+						<div class="item2"><img src="imgs/fruit-banana.png" alt="banana"></div>
+						<div class="item3"><img src="imgs/fruit-grape.png" alt="grape"></div>
+						<div class="item4"><img src="imgs/fruit-peach.png" alt="peach"></div>
+						<div class="item5"><img src="imgs/fruit-watermelon.png" alt="watermelon"></div>
+						<div class="item6"><img src="imgs/fruit-apple.png" alt="apple"></div>
+						<div class="item7"><img src="imgs/fruit-banana.png" alt="banana"></div>
+						<div class="item8"><img src="imgs/fruit-grape.png" alt="grape"></div> -->
+					</div>
+				</div>
+			</div>
+			
+			<!--end-->
+			<div id="end">
+				<!--end results-->
+				<div id="end-result-svg" data-svg-name="game-result.svg">
+					<h4 id="text-nickname-2">JOHN DOE</h4>
+					<h4 id="text-score-2">1,500</h4>
+					<h4 id="text-time">00:00</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--Scripts-->
+	<!-- <script type="text/javascript" src="js/test.js"></script> -->
+	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
+	<script type="text/javascript" src="js/helpers.js"></script>
+	<script type="text/javascript" src="js/View.js"></script>
+	<script type="text/javascript" src="js/GameBoard.js"></script>
+	<script type="text/javascript" src="js/Game.js"></script>
+	<script type="text/javascript" src="js/Event.js"></script>
+	<script type="text/javascript" src="js/ActiveItem.js"></script>
+	<script type="text/javascript" src="js/BoardItem.js"></script>
+	<script type="text/javascript" src="js/Fruit.js"></script>
+	<script type="text/javascript" src="js/Config.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

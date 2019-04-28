@@ -1,0 +1,242 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+	font-family: "rounds black";
+	src: url("../fonts/rounds_black/Rounds Black.otf");
+}
+
+* {
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "rounds black";
+}
+
+button,
+label {
+	cursor: pointer;
+}
+hr {
+	border: none;
+	margin: 0;
+	padding: 20px 0;
+}
+
+#wrap {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+#inner {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+#inner > div:nth-child(2) {
+	left: 100%;
+}
+#inner > div:nth-child(3) {
+	left: 100%;
+}
+#inner > div.prev {
+	left: -100%;
+}
+#inner > div.active {
+	left: 0;
+}
+#inner > div {
+	transition: 0.5s;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	float: left;
+}
+
+form div {
+	margin-bottom: 10px;
+}
+input {
+	width: 100%;
+	height: 60px;
+	border: none;
+	border-radius: 30px;
+	padding: 10px 30px;
+	box-shadow: 0 0 16px -5px #333;
+}
+
+svg {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	overflow: visible;
+}
+
+/*start*/
+#start {
+	background-image: url("../imgs/bg1.jpg");
+}
+#start-svg {
+	width: 800px;
+	position: relative;
+}
+#start-form {
+	width: 400px;
+	position: absolute;
+	top: 670px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+}
+
+/*game*/
+#game {
+	background-image: url("../imgs/bg2.jpg");
+}
+#game-data-svg {
+	width: 600px;
+	position: absolute;
+	left: 50px;
+	top: 30px;
+}
+#game-data-svg h2 {
+	width: calc(100% - 220px);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: #3f2000;
+	-moz-text-stroke-width: 3px;
+	-moz-text-stroke-color: #3f2000;
+	
+	position: absolute;
+	left: 195px;
+	font-size: 35px;
+	letter-spacing: -2px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: block;
+	text-align: center;
+}
+#text-stage {
+	background: -webkit-linear-gradient(rgb(255,218,0), rgb(239,111,37));
+	background: linear-gradient(rgb(255,218,0), rgb(239,111,37));
+	top: 272px;
+}
+#text-nickname {
+	background: -webkit-linear-gradient(rgb(248,210,11), rgb(0,162,160));
+	background: linear-gradient(rgb(248,210,11), rgb(0,162,160));
+	top: 358px;
+}
+#text-score {
+	background: -webkit-linear-gradient(rgb(255,218,0), rgb(239,111,37));
+	background: linear-gradient(rgb(255,218,0), rgb(239,111,37));
+	top: 440px;
+}
+#game-timer-svg {
+	width: 750px;
+	position: absolute;
+	right: 250px;
+	top: 0;
+}
+#game-boards-svg {
+	width: 800px;
+	position: absolute;
+	right: 220px;
+	top: 150px;
+}
+#game-board-items {
+	width: 736px;
+	height: 726px;
+	padding: 16px 20px 15px 18px;
+	position: absolute;
+	right: 46px;
+	top: 19px;
+	text-align: center;
+	overflow: hidden;
+}
+#game-board-items > div {
+	position: absolute;
+	width: 81px;
+	height: 81px;
+	transition: 0.5s cubic-bezier(1,1.37,.3,.91);
+	/*float: left;*/
+	/*margin-bottom: 7px;*/
+}
+/*#game-board-items > div.item1 {
+	margin-right: 6px;
+}
+#game-board-items > div.item2,
+#game-board-items > div.item3,
+#game-board-items > div.item5,
+#game-board-items > div.item6 {
+	margin-right: 7px;
+}
+#game-board-items > div.item4,
+#game-board-items > div.item7 {
+	margin-right: 8px;
+}*/
+
+/*end*/
+#end {
+	background-image: url("../imgs/bg3.jpg");
+}
+#end-result-svg {
+	width: 1000px;
+	position: relative;
+}
+#end-result-svg h4 {
+	width: 230px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: #3f2000;
+	-moz-text-stroke-width: 2px;
+	-moz-text-stroke-color: #3f2000;
+	
+	position: absolute;
+	left: 425px;
+	font-size: 24px;
+	letter-spacing: -0.5px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: block;
+	text-align: center;
+}
+#text-nickname-2 {
+	background: -webkit-linear-gradient(rgb(248,210,11), rgb(0,162,160));
+	background: linear-gradient(rgb(248,210,11), rgb(0,162,160));
+	top: 533px;
+}
+#text-score-2 {
+	background: -webkit-linear-gradient(rgb(255,218,0), rgb(239,111,37));
+	background: linear-gradient(rgb(255,218,0), rgb(239,111,37));
+	top: 596px;
+}
+#text-time {
+	background: -webkit-linear-gradient(rgb(248,210,11), rgb(0,162,160));
+	background: linear-gradient(rgb(248,210,11), rgb(0,162,160));
+	top: 662px;
+}
+
+
+#start,
+#game,
+#end {
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}

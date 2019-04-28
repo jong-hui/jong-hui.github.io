@@ -1,0 +1,273 @@
+@charset "utf-8";
+/* CSS Document */
+
+#loading  {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+}
+
+.loading {
+	opacity: 0;
+	transform: translateY(10%);
+	transition: 0s;
+}
+
+#wrap {
+	transition: 0.5s;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #5f6368;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+
+
+svg {
+	/*transform-style: preserve-3d;*/
+}
+svg * {
+	/*transform-origin: 50% 50%;*/
+}
+
+
+
+#start #fruits > g {
+	animation: fruits 1s linear infinite;
+}
+#start #fruits > g:nth-child(2) {
+	animation-delay: -0.1s;
+}
+#start #fruits > g:nth-child(3) {
+	animation-delay: -0.2s;
+}
+#start #fruits > g:nth-child(4) {
+	animation-delay: -0.3s;
+}
+#start #fruits > g:nth-child(5) {
+	animation-delay: -0.4s;
+}
+
+@keyframes fruits {
+	0% {
+		transform: translateY(0px);
+	}
+	80% {
+		transform: translateY(6px);
+	}
+}
+
+[id^=cloud] {
+	animation: cloud 2s linear infinite;
+}
+#cloud-2 {
+	animation-delay: -1s;
+}
+#cloud-3 {
+	animation-delay: -1.2s;
+}
+
+@keyframes cloud {
+	30% {
+		transform: translateX(13px);
+	}
+	80% {
+		transform: translateX(-8px);
+	}
+}
+
+
+#game-logo, #start-main {
+	animation: start-main 4s infinite;
+	transform-origin: center;
+}
+#btn-start:hover {
+	transform: scale(1.05) translateY(-20px);
+}
+#btn-start {
+	transition: 0.2s;
+	cursor: pointer;
+	transform-origin: center;
+}
+
+@keyframes start-main {
+	30% {
+		transform: scale(1.1);
+	}
+}
+
+
+#nickname.warning {
+	animation: ddi 0.4s;
+}
+@keyframes ddi {
+	0% {
+	}
+	30% {
+		transform: translateY(-6px);
+		background: #ffcaca;
+	}
+}
+
+.progress {
+	position: absolute;
+	bottom: 60px;
+	left: 147px;
+	width: 510px;
+}
+.progress > div {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 20px;
+	float: left;
+}
+
+#game.active #game-timer-svg > path:nth-child(11) {
+	transform-origin: 81px 120px;
+	animation: timer 10s linear infinite;
+}
+@keyframes timer {
+	0% {
+		transform: translate(29px, 0px) rotate(0deg);
+	}
+	100% {
+		transform: translate(29px, 0px) rotate(360deg);
+	}
+}
+
+
+
+#overrap {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 1320;
+	color:white;
+	font-size: 150px;
+	display: none;
+}
+#overrap.animation {
+	display: block;
+}
+#overrap > div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	opacity: 0;
+}
+#overrap.animation > div {
+	animation : numbers 1s;
+	transform-origin: center;
+}
+#overrap.animation > div:nth-child(2) {
+	animation-delay: 1s;
+}
+#overrap.animation > div:nth-child(3) {
+	animation-delay: 2s;
+}
+#overrap.animation > div:nth-child(4) {
+	animation-delay: 3s;
+}
+
+@keyframes numbers {
+	0% {
+
+	}
+	30% {
+		opacity: 1;
+	}
+	60% {
+		transform: scale(1.5);
+		opacity: 1;
+	}
+}
+
+.item.remove {
+	animation: remove 0.5s linear;
+}
+@keyframes remove {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.2);
+	}
+}
+
+.item.active {
+	animation: active 1s infinite;
+}
+@keyframes active {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
