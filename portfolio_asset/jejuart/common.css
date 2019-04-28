@@ -1,0 +1,514 @@
+@font-face {
+	font-family: "nanum";
+	src: url("/portfolio_asset/jejuart/font/NotoSansKR-Regular-Hestia.woff");
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style:none;
+	border: none;
+	outline: none;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+.rap {
+	max-width: 1440px;
+	margin: 0 auto;
+	width: 100%;
+}
+.rap2 {
+	max-width: 1000px;
+	margin: 0 auto;
+	width: 100%;
+}
+input[type=radio] {
+	display: none;
+}
+.sup {
+	width: 100%;
+	height: 100%;
+}
+.pink {
+	color: #ff8888;
+}
+.textbox > * {
+	margin-bottom: 40px;
+}
+.textbox .read {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.textbox h3 {
+	font-weight: normal;
+	font-size: 30px;
+}
+.textbox p {
+	line-height: 30px;
+	word-spacing: 2.5px;
+}
+body {
+	font-family: "nanum";
+	color: #333333;
+	letter-spacing: -0.03em;
+}
+header {
+	width: 100%;
+	height: 80px;
+}
+.logo {
+	font-size: 30px;
+	font-weight: bold;
+	padding-left: 35px;
+	line-height: 80px;
+	cursor: pointer;
+}
+
+.mobile {
+	display: none;
+}
+
+.menu {
+	width: 480px;
+}
+.menu > * {
+	padding: 0 20px;
+	line-height: 80px;
+	cursor: pointer;
+}
+
+.banner {
+	width: 100%;
+	height: 550px;
+	background: url("/portfolio_asset/jejuart/image/24.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.banner > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.main {
+	color: white;
+	font-weight: bold;
+	letter-spacing: -0.25em;
+	animation: main 1s ease 1 forwards;
+}
+.main p {
+	font-size: 46px;
+}
+.main p:nth-child(2) {
+	font-size: 56px;
+}
+@keyframes main {
+	0% {
+		margin-top: 180px;
+		opacity: 0;
+	}
+	70% {
+		margin-top: -20px;
+		opacity: 1;
+	}
+	100% {
+		margin-top: 0;
+	}
+}
+
+
+.schedule {
+	width: 100%;
+	height: 260px;
+	margin-top: -110px;
+}
+.schedules > div {
+	width: 100%;
+	flex-wrap: wrap;
+}
+.schedules > div > div {
+	width: 20%;
+	height: 100%;
+}
+.schedules > div:nth-child(1) {
+	height: 60px;
+	color: white;
+	display: flex;
+}
+.schedules > div:nth-child(1) > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+}
+.schedules > div:nth-child(1) > div:nth-child(1) {
+	background: #3fd2fd;
+}
+.schedules > div:nth-child(1) > div:nth-child(2) {
+	background: #2dabdd;
+}
+.schedules > div:nth-child(2) {
+	height: 77%;
+	color: #24857e;
+	background: #ffffff;
+	box-shadow: 0px 8px 20px 5px #999;
+}
+.schedules > div:nth-child(2) > div:not(:last-child){
+	border-right: 1px solid #efefef;
+	text-align: center;
+}
+.schedules > div:nth-child(2) > div:last-child {
+	background: #ff8888;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 24px;
+}
+.schedules > div:nth-child(2) > div:not(:last-child) p:nth-child(1) {
+	width: 100%;
+	margin-top: 35px;
+}
+.schedules > div:nth-child(2) > div:not(:last-child) p:nth-child(2) {
+	font-weight: bold;
+	margin-top: 10px;
+	font-size: 60px;
+}
+
+.welcome {
+	margin-top: 80px;
+	height: 520px;
+}
+.welcomes > div:nth-child(1) {
+	width: 40%;
+	height: 100%;
+	background: url("image/29.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.welcomes > .textbox {
+	width: 55%;
+	height: 100%;
+}
+
+.photo {
+	display: flex;
+}
+.photo > div {
+	background-position: center !important;
+	background-size: cover !important;
+	outline: 10px solid #fff;
+}
+.photo > div > .view > div {
+	background-position: center !important;
+	background-size: cover !important;
+}
+.photo > div:nth-child(1) {
+	width: 500px;
+	height: 300px;
+	background: url("/portfolio_asset/jejuart/image/25.jpg");
+}
+
+.slide {
+	width: 820px;
+	height: 540px;
+	margin-top: -110px;
+	position: relative;
+	overflow: hidden;
+}
+.left {
+	background: url("/portfolio_asset/jejuart/image/slide_left_btn.png");
+}
+.right {
+	background: url("/portfolio_asset/jejuart/image/slide_right_btn.png");
+}
+.arrow {
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	top: 50%;
+	padding: 0 20px;
+}
+.arrow > div {
+	display: none;
+}
+.arrow label {
+	display: inline-block;
+	width: 20px;
+	height: 50px;
+	opacity: .8;
+	cursor: pointer;
+}
+.position {
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
+.position label {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background: white;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.view {
+	width: 300%;
+	height: 100%;
+	position: relative;
+	transition: 1s;
+	left: 0;
+	display: flex;
+}
+.view > div {
+	width: 100%;
+	height: 100%;
+}
+
+.slide > .view > div:nth-child(1) {
+	background: url("/portfolio_asset/jejuart/image/35.jpg");
+}
+.slide > .view > div:nth-child(2) {
+	background: url("/portfolio_asset/jejuart/image/36.jpg");
+}
+.slide > .view > div:nth-child(3) {
+	background: url("/portfolio_asset/jejuart/image/38.jpg");
+}
+
+#slide1:checked ~ .content .photo .view {
+	left: 0;
+}
+#slide2:checked ~ .content .photo .view {
+	left: -100%;
+}
+#slide3:checked ~ .content .photo .view {
+	left: -200%;
+}
+#slide1:checked ~ .content .photo .slide .position label:nth-child(1),
+#slide2:checked ~ .content .photo .slide .position label:nth-child(2),
+#slide3:checked ~ .content .photo .slide .position label:nth-child(3) {
+	background: #ff8888;
+}
+#slide1:checked ~ .content .photo .slide .arrow .slide1,
+#slide2:checked ~ .content .photo .slide .arrow .slide2,
+#slide3:checked ~ .content .photo .slide .arrow .slide3 {
+	display: flex;
+}
+
+.every {
+	margin-top: 110px;
+	height: 620px;
+}
+.every > div {
+	position: relative;
+}
+.every .textbox {
+	width: 55%;
+}
+.every .img {
+	width: 40%;
+	height: 80%;
+	background: url("/portfolio_asset/jejuart/image/22.jpg");
+	background-size: cover;
+	background-position: center;
+}
+.every .etc {
+	width: 66%;
+	height: 32%;
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+	perspective: 1500px;
+}
+.every .etc > div {
+	width: 49.5%;
+	position: relative;
+	transition: 1s;
+}
+.every .etc > div:hover > .front {
+	transform: rotateY(180deg);
+}
+.every .etc > div:hover > .back {
+	transform: rotateY(360deg);
+}
+.every .etc > div > div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: 1s;
+}
+.back {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background: rgba(0,0,0,.7);
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+.every .etc > div .front {
+	background-size: cover !important;
+	background-position: center !important;
+}
+.every .etc > div:nth-child(1) > .front {
+	background: url("/portfolio_asset/jejuart/image/36.jpg");
+}
+.every .etc > div:nth-child(2) > .front {
+	background: url("/portfolio_asset/jejuart/image/38.jpg");
+}
+
+.three {
+	margin-top: 200px;
+	text-align: center;
+}
+.three h3 {
+	font-size: 34px;
+}
+.three h4 {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+.three p {
+	color: #a59999;
+	word-spacing: 4px;
+}
+.three div:nth-child(2) {
+	border: 1px #efefef;
+	border-style: none solid;
+}
+
+footer {
+	margin-top: 110px;
+	height: 210px;
+	background: #333333;
+	color: white;
+	padding-top: 60px;
+}
+footer .logo {
+	line-height: 0;
+	font-size: 22px;
+}
+footer .top {
+	padding-bottom: 35px;
+	border-bottom: 1px solid #555555;
+}
+.icons {
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+}
+.icons > img:hover {
+	transform: rotate(20deg);
+}
+.icons > img {
+	transition: .5s;
+	cursor: pointer;
+}
+.copy {
+	color: #999985;
+	text-align: center;
+	padding-top: 25px;
+}
+
+
+
+@media (max-width: 780px) {
+	.rap2 {
+		max-width: 700px;
+	}
+	.banner {
+		height: 460px;
+	}
+	.main p {
+		font-size: 36px;
+	}
+	.main p:nth-child(2) {
+		font-size: 40px;
+	}
+	.schedule {
+		height: 660px;
+	}
+	.schedules > div:nth-child(2) {
+		height: 90%;
+	}
+	.schedules > div:nth-child(1) > div {
+		width: 25%;
+	}
+	.schedules > div:nth-child(2) > div {
+		width: 50%;
+		height: 33.3333%;
+		background: white;
+	}
+	.schedules > div:nth-child(2) > div:last-child {
+		width: 100%;
+	}
+	.welcome {
+		margin-top: 170px;
+		height: 400px;
+	}
+	.textbox > * {
+		margin-bottom: 20px;
+	}
+	.textbox .read {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	.textbox h3 {
+		font-weight: normal;
+		font-size: 26px;
+	}
+	.textbox p {
+		line-height: 30px;
+		word-spacing: 4px;
+	}
+	.photo {
+		max-width: 700px;
+		height: 400px;
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+	.photo > div {
+		height: 100% !important;
+	}
+	.photo > div:nth-child(1) {
+		width: 40%;
+	}
+	.photo > div:nth-child(2) {
+		width: 60%;
+	}
+	.slide {
+		margin-top: 0;
+	}
+	.every {
+		margin-top: 130px;
+		height: 710px;
+	}
+	.every .img {
+		height: 56.333%;
+	}
+	.every .etc {
+		width: 100%;
+		height: 35%;
+	}
+	.three {
+		margin-top: 60px;
+	}
+	.three h3 {
+		font-size: 24px;
+	}
+	.three h4 {
+		font-size: 18px;
+	}
+	.three p {
+		font-size: 14px;
+	}
+	footer {
+		margin-top: 60px;
+	}
+}
