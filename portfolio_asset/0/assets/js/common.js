@@ -160,14 +160,14 @@ const App = {
 			img : "/portfolio_asset/0/portfolio/2/캡처.PNG"
 		},
 		{
-			title : "여수 소개페이지 앱 (대회과제)",
-			link : "portfolio/3/index.html",
-			img : "/portfolio_asset/0/portfolio/3/캡처.PNG"
-		},
-		{
 			title : "Fruits Pang 게임",
 			link : "https://jong-hui.github.io/fruitsPang",
 			img : "/portfolio_asset/0/portfolio/4/캡처.PNG"
+		},
+		{
+			title : "여수 소개페이지 앱 (대회과제)",
+			link : "https://jong-hui.github.io/portfolio_1",
+			img : "/portfolio_asset/0/portfolio/3/캡처.PNG"
 		},
 		{
 			title : "여수 지도 앱 (대회과제)",
