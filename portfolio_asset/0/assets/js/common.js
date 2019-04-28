@@ -110,7 +110,7 @@ const Screen = {
 				if (Screen.page === 2) {
 					$(".grid").masonry({
 						itemSelector : ".grid-item",
-						columnWidth : 480
+						columnWidth : $(window).width() / 4
 					});
 				}
 
@@ -224,7 +224,5 @@ const App = {
 
 
 $(function() {
-	setTimeout(function() {
-		App.init();
-	}, 5000);
+	App.init();
 });

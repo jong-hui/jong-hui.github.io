@@ -3,6 +3,7 @@
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	background: url("../imgs/bg.png") center / cover;
 }
 
 #pages {
@@ -184,6 +185,9 @@
 }
 
 
+.page2 .scroll {
+	background: url("../imgs/scroll2.png");
+}
 .scroll {
 	display: inline-block;
 	width: 24px;
@@ -261,7 +265,7 @@
 .grid {
 	background: #0b0b0f !important;
 }
-.grid-item { width: 480px; position: relative; }
+.grid-item { width: 25%; position: relative; }
 .grid-item--width2 { width: 620px; }
 
 .portfoilios {
