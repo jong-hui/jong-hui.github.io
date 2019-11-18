@@ -105,6 +105,11 @@ blockquote {
     border-left-width: 0.4rem;
   }
 
+  p {
+    border-left: .25rem solid $border-color;
+    padding-left: 1rem;
+  }
+
   p:last-child {
     margin-bottom: 0;
   }
