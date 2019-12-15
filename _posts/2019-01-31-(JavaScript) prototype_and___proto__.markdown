@@ -93,7 +93,7 @@ toString은 Object의 prototype중 하나입니다 [Object.prototype.toString](h
 
 ![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console4.png)
 
-toString은 Object의 프로토타입입니다. 즉 t의 prototype link(= \_\_proto\_\_)중 Object가 있는것이죠.
+toString은 Object의 프로토타입입니다. 즉 t의 prototype link(= __proto__)중 Object가 있는것이죠.
 
 ![javascript_console](https://jong-hui.github.io\assets\img\posts\prototype&__proto__\console5.png)
 
