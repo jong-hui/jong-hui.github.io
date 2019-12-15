@@ -5,6 +5,7 @@ subtitle: "this 키워드에 대해 알아봅시다"
 categories: devlog
 tags: js javascript this keyword 
 comments: true
+header-img: "/img/header_imgs/thissss.png"
 ---
 
 # this
