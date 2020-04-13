@@ -8,7 +8,7 @@ isme2n:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    항상 공부하고 생각하는 개발자 (구직 중 👀)
+    항상 공부하고 생각하는 개발자
 
   # This photo will be used in the about section
   picture:
