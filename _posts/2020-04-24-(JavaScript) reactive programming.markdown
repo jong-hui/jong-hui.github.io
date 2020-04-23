@@ -27,7 +27,7 @@ Reactive Programming(: 이하 RP)의 사전 정의는 위와 같습니다.
 
 ## 들어가기 앞서
 
-들어가기 전에 현재 자바스크립트 생태계에서는, 함수형 프로그래밍과 함께, 반응형 프로그래밍도 많이 쓰이고 있습니다. 많이 쓰이는 React는 `Reactive`에서 이름을 따왔고, Vue에서는 자체적으로 [반응형 시스템](https://kr.vuejs.org/v2/guide/reactivity.html)을 사용합니다. 또한, [ReativeX](http://reactivex.io/)의 RxJS 라이브러리도 많이 사용하고 있습니다.  
+들어가기 전에 현재 자바스크립트 생태계에서는, 함수형 프로그래밍과 함께, 반응형 프로그래밍도 많이 쓰이고 있습니다. Vue에서는 자체적으로 [반응형 시스템](https://kr.vuejs.org/v2/guide/reactivity.html)을 사용합니다. 또한, [ReativeX](http://reactivex.io/)의 RxJS 라이브러리도 React와 함께 많이 사용하고 있습니다.  
 그만큼 현재 자바스크립트 생태계에서는, 함수형 프로그래밍과 함께 정말 중요한 개념이라고 생각합니다. 그렇기에, 배울 가치가 있다고 개인적으로 생각합니다.
 
 -----------------
