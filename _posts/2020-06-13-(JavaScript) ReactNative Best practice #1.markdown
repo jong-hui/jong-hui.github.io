@@ -5,7 +5,7 @@ subtitle: "React Native 모범사례 #1"
 categories: devlog
 tags: js javascript react react-native ReactNative practice tutorial
 comments: true
-header-img: "/img/header_imgs/ReactiveInJS.png"
+header-img: "/img/posts/reactnativepractice/React_Native_Best_Practice.png"
 ---
 
 # React Native best practice
