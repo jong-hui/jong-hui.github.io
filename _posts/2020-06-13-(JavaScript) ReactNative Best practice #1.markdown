@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[Javascript] React Native best practice #1"
-subtitle: "React Native 모범사례 #1"
+title: "[Javascript] React Native 모범 사례 #1"
+subtitle: "React Native 모범 사례 #1"
 categories: devlog
 tags: js javascript react react-native ReactNative practice tutorial
 comments: true
