@@ -8,11 +8,6 @@ comments: true
 header-img: "/img/posts/nested-ternaries-operation/90004907-650f5280-dcd1-11ea-956f-57ca2a4ebe6f.png"
 ---
 
-# 중첩 삼항 연산자를 싫어하는 건 편견이다.
-
-
-![중첩 삼항 연산자를 사용한 예시](https://user-images.githubusercontent.com/42797995/90004907-650f5280-dcd1-11ea-956f-57ca2a4ebe6f.png)
-
 > 편견 | 공정하지 못하고 한쪽으로 치우친 생각.
 
 ## 중첩 삼항 연산자를 싫어하는 건 편견이다.
