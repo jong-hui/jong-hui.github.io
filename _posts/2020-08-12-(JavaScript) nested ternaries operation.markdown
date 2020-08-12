@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "[Javascript] 중첩 삼항연산자는 정말 읽기 힘든 걸까?"
-subtitle: "중첩 삼항연산자를 기피하는 건 그저 편현 아닐까?"
+title: "[Javascript] 중첩 삼항 연산자는 정말 읽기 힘든 걸까?"
+subtitle: "중첩 삼항 연산자를 기피하는 건 그저 편견 아닐까?"
 categories: devlog
 tags: js javascript 삼항연산자 중첩 nested ternaries operation
 comments: true
-header-img: "https://user-images.githubusercontent.com/42797995/90004907-650f5280-dcd1-11ea-956f-57ca2a4ebe6f.png"
+header-img: "/img/posts/nested-ternaries-operation/90004907-650f5280-dcd1-11ea-956f-57ca2a4ebe6f.png"
 ---
+
+# 중첩 삼항 연산자를 싫어하는 건 편견이다.
 
 
 ![중첩 삼항 연산자를 사용한 예시](https://user-images.githubusercontent.com/42797995/90004907-650f5280-dcd1-11ea-956f-57ca2a4ebe6f.png)
