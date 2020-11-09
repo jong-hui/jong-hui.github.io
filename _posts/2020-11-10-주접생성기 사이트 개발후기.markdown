@@ -5,7 +5,7 @@ subtitle: "주접떠는 사이트를 만들어보자"
 categories: devlog review
 tags: 주접 트렌드 유튜브 댓글 주접모음 모음 웃긴주접 웃긴모음
 comments: true
-header-img: "https://user-images.githubusercontent.com/42797995/98566779-87296880-22f2-11eb-84ef-775a15183b68.gif"
+header-img: "/img/posts/ju-jeob/header.png"
 ---
 
 ## 주접 사이트 개발 후기
@@ -13,6 +13,8 @@ header-img: "https://user-images.githubusercontent.com/42797995/98566779-8729688
 
 
 [https://ju-jeob.com](https://ju-jeob.com/) 
+[해당 프로젝트 Github에서 보기](https://github.com/jong-hui/JuJeob)
+
 요즈음 유튜브 댓글을 보다보면, 다음과 같은 댓글이 많은 호응을 받는 걸 볼 수 있다.
 
 > 언니보고 벽 뿌시다가 우리집 원룸됐어  
@@ -139,3 +141,5 @@ AWS를 사용하여 배포했고, <https://ju-jeob.com> 이라는 도메인을 �
 [이전 글](https://jong-hui.github.io/devlog/2020/08/12/(JavaScript)-nested-ternaries-operation/)이 페이스북으로 공유가 되고 하루에 몇 백 분이 방문하는 걸 보곤 뿌듯함을 많이 느꼈다. 그 이후로 포스팅 하려 했지만,, 마음처럼 안되는 걸..
 
 아마 다음 글은 2020 회고가 되지 않을 듯 싶다. 많이 긴 글이 되리라 생각된다.
+
+[해당 프로젝트 Github에서 보기](https://github.com/jong-hui/JuJeob)
