@@ -1,0 +1,543 @@
+---
+layout: post
+title: "[React] 리액트 훅이 실패한 설계인 이유 네가지"
+subtitle: "리액트 훅이 실패한 설계인 이유 네가지"
+categories: devlog
+tags: js javascript front-end 프론트엔드 리액트 React hooks React-hooks 훅 훅스
+comments: true
+header-img: "/img/posts/react-hooks-sucks/header.jpeg"
+---
+
+# 리액트 훅이 실패한 설계인 이유 4가지
+
+본문에 들어가기 앞서, 필자는 `리액트 훅`을 실무에서 1년간 사용했고, 아직도 `리액트 훅`을 사용하고 굉장한 팬이란 걸 밝힌다.
+그리고, 분명 `리액트 훅`이 **성공한 설계**인 이유가 여러가지 있다.  
+
+하지만 이 글에선 `리액트 훅` 그리고 `Function component`가 왜 **실패한 설계**인지에 대하여 다룰 예정이다.
+
+매우 긴 글이다. [TLDL](#결론)
+
+
+## 들어가기 앞서
+리액트 훅(이하 Hooks)은 현재 너무 과대평가 되어있다.  
+한국의 많은 블로그 글들이 Hooks에 대해 비판을 전혀 하지 않는다.  
+
+내가 느꼈을 때, 많은 글들이 `Function component(hooks)`를 `Class component`의 상위호환이라고 생각하는 것 같다.
+
+
+### jQuery
+
+프론트엔드에 입문하는 사람들이 `React`를 먼저 배우는 것을 알고있다.  
+실제로 “`html, js, css`? 배우지 마세요. `React`먼저 배우세요.” 라는 말도 들었었다.
+
+물론 맞는 말일 수도 있다. 하지만 어떤 라이브러리가 생각나는 말 아닌가?  
+`jQuery`는  `Angular, React, Vue`가 등장하기 이전, 많은 사람들이(물론 나도 포함) 사용하던 라이브러리다.
+
+이제는 `jQuery`를 많이 사용하지 않는다. 그 이유는 다음과 같다.
+
+- 브라우저의 발전
+- `React, Vue`와 같은 `VDom`라이브러리(프레임워크)의 등장
+- ~~개발자들의 타도운동(?)~~
+
+필자는 3년동안 jQuery를 사용했고, jQuery의 개발 생산성이 뛰어나다는 것을 알고있다.
+
+내가 jQuery를 처음 사용할 때는, `javascript == jQuery` 인줄 알았다. 
+`javascript`를 처음 배울 때  `$(function () {})`를 썼으니까.
+
+많은 사람들이 그랬을 거라고 믿어 의심치 않는다.
+
+그런데, 요즘 문득 드는 생각이 ”`javascript == React`가 아닐까?” 란 생각이다.  
+그도 그럴 것이, 누군가 프론트엔드에 입문하면, `html, js, css`는 스킵하고, `jsx(html), React(js)`를 배운다.
+
+`React`로 인스타그램은 잘 만들지만, `html, js, css`로 만들라고 하면 **못 만든다**.  
+내가 `jQuery`가 없으면 벙어리가 됐을 때가 생각난다.
+
+나는 지금 `React`비관론과 `jQuery`찬양론을 주장하는 게 아니다.  
+
+하지만, `React`가 없어지면?  
+물론 없어질 일은 없다. 내가 말하고자 하는 것은. `React`가 아닌, 다른 라이브러리`(Svelte, element)` 로 개발하려고 하면, 분명 많이 힘들 것이다.
+
+필자는 `jQuery -> javascript -> Vue, React`순으로 공부를 했는데, `jQuery -> Vue, React`순으로 공부를 했다면 정말 힘들었을 것 같다.
+
+여기서 `javascript`를 공부함은, 문법을 공부한다는 게 아니라, 문제의 발생, 해결에 대한 경험을 얘기한다.
+
+난 실제로, `jQuery`와 `javascript`를 사용하면서, `javascript`의 모호함에 인해 생기는 문제(예를 들어, 주소 참조, 불변성, 이벤트와 같은 문제 등)을 해결한 경험이.  
+`React`를 배울 때 많은 도움이 되었다. 배우면서, “아.. 이런 문제 때문에 이렇게 설계했구나.”라는 생각이 많이 들었다.
+
+- - - -
+
+## React의 jQuery화(化)
+
+`2025년, 한 기술 블로그 게시글 중 발췌`
+
+> 이제는 `React`를 많이 사용하지 않는다. 그 이유는 다음과 같다.  
+>   
+> - 브라우저의 발전 (VDom을 사용하지 않아도 성능 충분)  
+> - `Svelte`와 같은 `VDom`을 사용하지 않는 라이브러리(프레임워크)의 등장  
+> - **React Hooks의 단점**  
+
+
+## React Hooks의 단점
+
+### 1. useEffect는 완벽하지 않다.
+
+`useEffect`훅이란? 기존`Class Component`의 `라이프 사이클 메서드들`을 대체할 수 있는 기본 훅이다.  
+
+`useEffect`는 두번째 인자로 종속성 리스트를 받고, 이 종속성 중 하나라도 **변경**됐을 때, 실행하는 것을 통해 `라이프 사이클`을 **흉내**낼 수 있다.  
+
+> `React`에서의 **변경**은 `Object.is`를 일컫는다.  
+
+`Object.is`는 대체로 원시적인 타입에 올바르게 작동한다.  
+문제는, 원시적인 타입(string, number 등)이 아닌, 배열 혹은 객체일 때에 발생한다.
+
+`Object.is`는 객체가 비교되면, 참조(reference)로 비교한다. 예를 들어.
+
+```javascript
+const a = { test: 'a' }
+const b = { test: 'a' }
+
+Object.is(a, b) // false
+Object.is(a, a) // true
+```
+이런 식이다. 
+
+다음과 같은 예제에서는, 모든 렌더링마다 `useEffect`가 실행된다.
+
+```javascript
+const useFetch = (config: ApiOptions) => {
+  const  [data, setData] = useState(null);
+
+  useEffect(() => {
+    const { url, skip, take } = config;
+    const resource = `${url}?$skip=${skip}&take=${take}`;
+    axios({ url: resource }).then(response => setData(response.data));
+  }, [config]); // <-- 모든 렌더링마다 http요청을 한다
+
+  return data;
+};
+
+const App: React.FC = () => {
+  const data = useFetch({ url: "/users", take: 10, skip: 0 });
+  return <div>{data.map(d => <div>{d})}</div>;
+};
+```
+
+물론, `useFetch({ url: "/users", take: 10, skip: 0 });` 이 코드를 `useMemo`와 같이 매번 동일한 객체가 전달될 수 있도록 처리를 하면 해당 문제는 해결된다.  
+
+나는 이런 문제를 개발하며 많이 겪었다. [해당 이슈](https://github.com/facebook/react/issues/14476#issuecomment-471199055)를 보면, 이를 해결하는 방법들이 있다.
+
+- - - -
+
+### 2. Hooks는 호출되는 순서에 의존한다.
+
+`Hooks`는 규칙이 있다. [Hook의 규칙 – React](https://ko.reactjs.org/docs/hooks-rules.html)
+
+이 중 하나는, “**반복문, 조건문 혹은 중첩된 함수 내에서 Hook을 호출하지 마세요.**”이다. 
+
+이게 문제되는 경우는, 사실 꽤 많다. 하나만 예를 들어보자.
+
+**!! 목표!) 유저 리스트와 클릭하면 페이징되는 버튼을 구현하여라. (useFetch를 사용하시오) !!**
+
+자, 우린 해당 목표를 달성하기 위해 다음과 같은 코드를 작성했다.
+
+```javascript
+const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<ApiOptions>({
+    take: 10,
+    skip: 0
+  });
+
+  const [users, loading] = useFetch(currentPage);
+
+  if (loading) {
+    return <div>loading....</div>;
+  }
+
+  return (
+    <>
+      {users.map((u: User) => (
+        <div>{u.name}</div>
+      ))}
+      <ul>
+        {[...Array(4).keys()].map((n: number) => (
+          <li>
+            <button onClick={() => console.log('여기서 useFetch를 호출하면 에러가 나온다')}>{n + 1}</button>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+```
+
+우린 버튼을 클릭했을 때 `useFetch`를 사용하려고 했다. 하지만, `Hooks`의 규칙중 하나인 “**반복문, 조건문 혹은 중첩된 함수 내에서 Hook을 호출하지 말아야한다**”때문에 우린 좀 많이 돌아가야 했다.
+
+이 규칙이 `Hooks`의 규칙이 포함되어 있는 이유는 다음 글에 설명되어잇다. ([Why Do React Hooks Rely on Call Order? — Overreacted](https://overreacted.io/why-do-hooks-rely-on-call-order/))
+
+#### 그럼 Hooks를 고차함수로 만들어보자.
+
+그럼 우린 이제 `custom hooks`라는 것을 사용하여 이 문제를 해결해 보려고 했다.
+
+> 결국 우린 Hooks를 사용하기 위해 Hooks를 만든다.  
+
+[react-async-hook](https://github.com/slorber/react-async-hook)는 우리가 만들고자 하는 `custom hook` 기능을 가지고 있다. 하지만 우린 라이브러리를 사용하지 않고, 직접 구현해보겠다.
+
+**!! 굳이 이 예제 코드를 전부 읽을 필요는 없다. 핵심은 우리가 `Hooks`의 규칙을 따르기 위해 너무 많은 리소스를 쓰고, 또 이 코드들이 복잡성을 증가시킨다는 것이다. !!**
+
+```javascript
+const createTask = (func, forceUpdateRef) => {
+  const task = {
+    start: async (...args) => {
+      task.loading = true;
+      task.result = null;
+      forceUpdateRef.current(func);
+      try {
+        task.result = await func(...args);
+      } catch (e) {
+        task.error = e;
+      }
+      task.loading = false;
+      forceUpdateRef.current(func);
+    },
+    loading: false,
+    result: null,
+    error: undefined
+  };
+  return task;
+};
+
+export const useAsyncTask = (func) => {
+  const forceUpdate = useForceUpdate();
+  const forceUpdateRef = useRef(forceUpdate);
+  const task = useMemo(() => createTask(func, forceUpdateRef), [func]);
+
+  useEffect(() => {
+    forceUpdateRef.current = f => {
+      if (f === func) {
+        forceUpdate({});
+      }
+    };
+    const cleanup = () => {
+      forceUpdateRef.current = () => null;
+    };
+    return cleanup;
+  }, [func, forceUpdate]);
+
+  return useMemo(
+    () => ({
+      start: task.start,
+      loading: task.loading,
+      error: task.error,
+      result: task.result
+    }),
+    [task.start, task.loading, task.error, task.result]
+  );
+};
+
+export const useFetch = (initial: ApiOptions) =>
+  useAsyncTask(
+    useCallback(
+	    async (overrides: ApiOptions) => {
+        return api({ ...initial, ...overrides });
+      },
+      [initial]
+    )
+);
+```
+
+자, 이제 우리가 만든  `useAsyncTask `의 `start`를 `Function component`안에서  `Hooks`의 규칙에 어긋나지 않고  사용할 수 있다..!
+
+> 어디선가 들리는 목소리, “뭔가 **잘못된 느낌**이 들지 않는가? 이 기능을 구현하기 위해선 꼭 이렇게 이해하기 힘든 코드들로 가득해야할까?”  
+
+여기서 끝이 아니다. 우리의 목표는 버튼이 클릭되었을 때 말고도 유저 리스트를 불러와야 한다.
+
+```javascript
+export const useAsyncRun = (
+  asyncTask: ReturnType<typeof useAsyncTask>,
+  ...args: any[]
+) => {
+  const { start } = asyncTask;
+  useEffect(() => {
+    start(...args);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [asyncTask.start, ...args]);
+  useEffect(() => {
+    const cleanup = () => {
+      // clean up code here
+    };
+    return cleanup;
+  });
+};
+```
+
+이제 이 코드까지 적용시키면, 우리는 드디어 목표를 달성할 수 있다..!!
+
+그 목표는 그저 “**유저 리스트와 클릭하면 페이징되는 버튼**”일지라도, 우리가 그 기능을 구현하기 위해 이렇게 고도의(복잡한) 기술을 사용했으니 괜찮다. “간지나잖아?”
+
+```javascript
+const App: React.FC = () => {
+  const asyncTask = useFetch(initialPage);
+  useAsyncRun(asyncTask);
+
+  const { start, loading, result: users } = asyncTask;
+
+  if (loading) {
+    return <div>loading....</div>;
+  }
+
+  return (
+    <>
+      {(users || []).map((u: User) => (
+        <div>{u.name}</div>
+      ))}
+
+      <ul>
+        {[...Array(4).keys()].map((n: number) => (
+          <li key={n}>
+            <button onClick={() => start({ skip: 10 * n, take: 10 })}>
+              {n + 1}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+```
+
+자, 이제 유저 리스트도 정확히 나오고, 페이징 버튼도 원하는 대로 작동한다. 🎉
+
+내가 이렇게까지 (억지스러운)목적까지 설정하며 해당 문단, 그러니까 “**Hooks는 호출되는 순서에 의존한다.**”을 쓴 이유는 다들 눈치챘겠지만, 우린 간단한 기능이라도 `Hooks`의 규칙에 막혀 돌고 돌아가며 구현해야 한다는 사실이 `Hooks`의 단점이란 것이다.
+
+이게 반복되면 점점 코드는 목적을 알아보기 힘들고, 복잡성이 증가한다.
+
+- - - -
+
+
+### 3. Hooks는 클로저(Closure)에 너무 의존한다.
+> [클로저 - JavaScript | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)  
+
+경험상 `Hooks`는 클로저에 크게 의존한다. 컴포넌트가 커지다보면, `Hooks`또한 많아지는데, 많은 클로저들은 복잡성을 크게 증가시킨다.
+
+특히, `오래된 클로저(최신상태가 아닌 클로저)`는 해결하기 힘든 문제이며, 이게 `Hooks`안에 들어가있다면 해결은 더 힘들어진다.
+
+
+이번 문단에서도 예를 들어 설명하겠다.
+
+먼저, 다음 함수 `createIncrement`는 값을 증가시키는 함수와, 그 값을 로깅하는 함수를 배열로 반환한다. (많은 `Hooks`가 해당 형태를 띄고있다)
+
+```javascript
+function createIncrement(incBy) {
+  let value = 0;
+
+  function increment() {
+    value += incBy;
+    console.log(value);
+  }
+
+  const message = `Current value is ${value}`;
+  function log() {
+    console.log(message);
+  }
+  
+  return [increment, log];
+}
+
+const [increment, log] = createIncrement(1);
+increment(); // 1
+increment(); // 2
+increment(); // 3
+// 여기까진 괜찮지만
+log();       // "Current value is 0"
+// 의도는 3이 나와야한다.
+```
+
+왜? 우리의 의도대로 "Current value is 3”이 로깅이 되지 않고, "Current value is 0”이 된걸까?  
+해당 문제를 해결하기 위해선 한 줄만 바꿔주면 된다.
+
+```javascript
+function createIncrement(incBy) {
+  let value = 0;
+
+  function increment() {
+    value += incBy;
+    console.log(value);
+  }
+
+------
+  const message = `Current value is ${value}`;
+------
+  function log() {
+++++++
+    const message = `Current value is ${value}`;
+++++++
+    console.log(message);
+  }
+  
+  return [increment, log];
+}
+
+const [increment, log] = createIncrement(1);
+increment(); // 1
+increment(); // 2
+increment(); // 3
+log();       // "Current value is 3"
+// 의도대로 작동한다
+```
+
+우리는 클로저라는 개념을 통해, 기존 코드(의도대로 작동하지 않은 코드)는 `message `변수를 캡쳐해 가지고 있다는 것을 알고있다.  
+그래서 `value`가 변하더라도 `message`가 업데이트 되지 않았던 것이다.
+
+우린 이런 `log`와 같은 함수를 `오래된 클로저`라고 부르기로 했다.
+
+#### Hooks에서의 오래된 클로저 문제
+
+다음 컴포넌트는, 2초마다 `count`의 값을 로깅하는 컴포넌트다.  
+`count`의 값은 버튼을 클릭해 증가시킬 수 있다.
+
+```javascript
+function WatchCount() {
+  const [count, setCount] = useState(0);
+
+  useEffect(function() {
+    setInterval(function log() {
+      console.log(`Count is: ${count}`);
+    }, 2000);
+  }, []);
+
+  return (
+    <div>
+      {count}
+      <button onClick={() => setCount(count + 1) }>
+        Increase
+      </button>
+    </div>
+  );
+}
+```
+[데모, 오래된 클로저 문제 - CodeSandbox](https://codesandbox.io/s/oraedoen-keulrojeo-munje-gq6ny)
+
+몇번을 클릭해도 `count`의 값은 항상 0이다.
+
+![image](https://user-images.githubusercontent.com/42797995/103921431-da366500-5155-11eb-90e9-e5806fc0993a.png)
+
+문제점은 모두 알다시피, `useEffect`에 있는 `log`에 있다. `log`는 생성될 때의 `count`값, 즉 0을 **캡처**해 가지고있다.  
+우리가 아무리 버튼을 눌러도 `log`함수는 캡처한 0만 가지고 있고, `count`의 값을 전혀 사용하지 않는다.  
+
+이게 **오래된 클로저**이다.
+
+이 문제를 해결하기 위해서 `useEffect`의 종속성에 `count`를 추가하고 몇가지 작업을 추가했다.
+
+![image](https://user-images.githubusercontent.com/42797995/103921557-00f49b80-5156-11eb-973f-89ce7a07bac6.png)
+
+
+```javascript
+function WatchCount() {
+  const [count, setCount] = useState(0);
+
+  useEffect(
+    function () {
+-----
+    setInterval(function log() {
+      console.log(`Count is: ${count}`);
+    }, 2000);
+-----
++++++
+      const id = setInterval(function log() {
+        console.log(`Count is: ${count}`);
+      }, 2000);
+      return function () {
+        clearInterval(id);
+      };
++++++
+    },
+-----
+    []
+-----
++++++
+    [count]
++++++
+  );
+
+  return (
+    <div>
+      {count}
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+```
+[데모, 오래된 클로저 문제 해결 - CodeSandbox](https://codesandbox.io/s/oraedoen-keulrojeo-munje-haegyeol-8q006?file=/src/App.js)
+
+해결했는데도 **뭔가 잘못된 느낌**이 든다.
+
+이 문제는 **불변성**과 연관되기도 하다. 실제로 `React`의 불변성 문제를 해결하기위한 많은 라이브러리들이 publish되어있다.
+
+- - - -
+
+### 4. 진짜 너무 복잡한 흐름
+
+이런 주관적인 의견은 기피하지만, 정말 **너무 복잡하다.**  
+몇개 정도의 `useState`가 쓰이는 정도는 따라갈 수 있을 정도이다. 
+
+하지만 우리가 실무에서 작성하는 컴포넌트들은 그렇지 않다.  
+몇개의 컴포넌트가 중첩되어있고, 감싸져있는 컴포넌트들도 몇개의 `Hooks`를 호출하고, 그 `Hooks`에서 조차 다른 `Hooks`(가장 짜증나는 건 useEffect다)를 호출한다.
+
+`Hooks hell`이 따로없다 정말. 
+
+이를 테스트하기 위한 시험이 있다.
+[React Hooks Quiz](https://docs.google.com/forms/d/e/1FAIpQLSdAG7QtzNT_-rl6j1bqJpJaq-5ZaLR_hnWUGvtVCR4vD5O_sA/viewform)
+
+우리는 개발시간의 80%는 코드를 읽기위해 투자한다. 하지만 이렇게 복잡한 흐름은 코드 읽기를 짜증나게 만들뿐만 아니라 `사이드 이펙트`를 찾기 힘들고, 디버깅하기도 힘들다.  
+
+이 문제와 내가 서술했던 문제들이 겹친다면.. 상상하기도 싫다.
+
+- - - -
+
+## 결론
+나는 크게 네가지 이유를 대며 `Hooks`가 왜 실패한 설계인지 설명했다.  
+이 세가지 이유 말고도 많은 이유가 있겠지만, 길이 길어질 것 같아 이만 줄이려한다.  
+
+네가지 이유를 요약하자면 다음과 같다.
+
+- 1. `useEffect`의 종속성 비교 문제
+	- 개발하며 같은 문제가 반복해 나온다는 것은 내가 멍청한 게 아니라, 설계가 잘못되어 있는 건 아닐까?
+- 2. `Hooks`의 규칙
+	- `Hooks`의 규칙은 개발 디자인 패턴을 강제한다, 한계를 만든다.
+	- 이런 디자인 패턴 강제와 한계가 **뭔가 잘못된 느낌**을 준다.
+- 3. `Hooks`는 클로저에 너무 의존한다.
+	- `Hooks` 자체가 클로저에 기반했지만, 클로저는 너무 예상하기 힘들다.
+- 4. 진짜 너무 복잡한 흐름
+	- 사실 내가 개발을 못해서 그런거다. 주관적인 주장이다.
+
+이 글의 목적은 “지금 당장 `Hooks`의 사용을 그만두고, `HOC`로 돌아가세요!“가 아니다.  
+
+내가 생각했을 때에  `Hooks`는 이런 문제점이 있다는 것이다. 그리고 `Hooks`를 사용하기 전, 이 글을 본다면. 본격적으로 개발할 때 이런 단점들에 분명 공감할 것이다.
+
+- - - -
+
+## 사족
+
+사실 나는 `Hooks`가 왜 성공한 설계인지 더 잘 서술할 수 있다.  
+아직까지 나는 `Hooks`의 팬이고 아주 잘 사용하고있다.
+
+폼 발리데이션을 수행하기 위한 `custom Hook`을 만드는 과정에서 `javascript`와 `React` 그리고 `Hooks`에 대한 많은 회의감이 들어 이 게시글을 작성하려 생각했다.
+
+누군가에게 이 글은 **그저 징징글**이다.  
+다른 대체재는 제시하지도 않고, 지가 개발못해서 이런 불만이나 해댄다고 생각할 수도 있다. 
+
+그리고 앞에서 jQuery에 대해 서술했는데, 이 게시글에 성격과 맞지 않는 것 같아서 빼려다가.. 어차피 하고싶은 얘기기도 해서 그냥 포함시켰다.
+
+
+
+## 참고자료
+[Frustrations with React Hooks - LogRocket Blog](https://blog.logrocket.com/frustrations-with-react-hooks/)
+<https://github.com/slorber/react-async-hook>
+[GitHub - alexreardon/use-memo-one: useMemo and useCallback but with a stable cache](https://github.com/alexreardon/use-memo-one)
+[GitHub - slorber/react-async-hook: React hook to handle any async operation in React components, and prevent race conditions](https://github.com/slorber/react-async-hook)
+<https://medium.com/swlh/the-ugly-side-of-hooks-584f0f8136b6>
+<https://dmitripavlutin.com/react-hooks-stale-closures/>
+[Why Do React Hooks Rely on Call Order? — Overreacted](https://overreacted.io/why-do-hooks-rely-on-call-order/)
+<https://github.com/reactjs/rfcs/pull/68>
+<https://dillonshook.com/a-critique-of-react-hooks/>
