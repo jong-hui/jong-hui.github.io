@@ -273,7 +273,7 @@ export const useAsyncRun = (
 
 이제 이 코드까지 적용시키면, 우리는 드디어 목표를 달성할 수 있다..!!
 
-그 목표는 그저 “**유저 리스트와 클릭하면 페이징되는 버튼**”일지라도, 우리가 그 기능을 구현하기 위해 이렇게 고도의(복잡한) 기술을 사용했으니 괜찮다. “간지나잖아?”
+그 목표가 그저 “**유저 리스트와 클릭하면 페이징되는 버튼**”일지라도, 우리가 그 기능을 구현하기 위해 이렇게 고도의(복잡한) 기술을 사용했으니 괜찮다. “간지나잖아?”
 
 ```javascript
 const App: React.FC = () => {
@@ -316,7 +316,7 @@ const App: React.FC = () => {
 
 
 ### 3. Hooks는 클로저(Closure)에 너무 의존한다.
-> [클로저 - JavaScript | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)  
+[클로저 - JavaScript | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)  
 
 경험상 `Hooks`는 클로저에 크게 의존한다. 컴포넌트가 커지다보면, `Hooks`또한 많아지는데, 많은 클로저들은 복잡성을 크게 증가시킨다.
 
@@ -497,18 +497,18 @@ function WatchCount() {
 
 ## 결론
 나는 크게 네가지 이유를 대며 `Hooks`가 왜 실패한 설계인지 설명했다.  
-이 세가지 이유 말고도 많은 이유가 있겠지만, 길이 길어질 것 같아 이만 줄이려한다.  
+이 네가지 이유 말고도 많은 이유가 있겠지만, 길이 길어질 것 같아 이만 줄이려한다.  
 
 네가지 이유를 요약하자면 다음과 같다.
 
-- 1. `useEffect`의 종속성 비교 문제
+- 1번, `useEffect`의 종속성 비교 문제
 	- 개발하며 같은 문제가 반복해 나온다는 것은 내가 멍청한 게 아니라, 설계가 잘못되어 있는 건 아닐까?
-- 2. `Hooks`의 규칙
+- 2번, `Hooks`의 규칙
 	- `Hooks`의 규칙은 개발 디자인 패턴을 강제한다, 한계를 만든다.
 	- 이런 디자인 패턴 강제와 한계가 **뭔가 잘못된 느낌**을 준다.
-- 3. `Hooks`는 클로저에 너무 의존한다.
+- 3번, `Hooks`는 클로저에 너무 의존한다.
 	- `Hooks` 자체가 클로저에 기반했지만, 클로저는 너무 예상하기 힘들다.
-- 4. 진짜 너무 복잡한 흐름
+- 4번, 진짜 너무 복잡한 흐름
 	- 사실 내가 개발을 못해서 그런거다. 주관적인 주장이다.
 
 이 글의 목적은 “지금 당장 `Hooks`의 사용을 그만두고, `HOC`로 돌아가세요!“가 아니다.  
@@ -532,12 +532,12 @@ function WatchCount() {
 
 
 ## 참고자료
-[Frustrations with React Hooks - LogRocket Blog](https://blog.logrocket.com/frustrations-with-react-hooks/)
-<https://github.com/slorber/react-async-hook>
-[GitHub - alexreardon/use-memo-one: useMemo and useCallback but with a stable cache](https://github.com/alexreardon/use-memo-one)
-[GitHub - slorber/react-async-hook: React hook to handle any async operation in React components, and prevent race conditions](https://github.com/slorber/react-async-hook)
-<https://medium.com/swlh/the-ugly-side-of-hooks-584f0f8136b6>
-<https://dmitripavlutin.com/react-hooks-stale-closures/>
-[Why Do React Hooks Rely on Call Order? — Overreacted](https://overreacted.io/why-do-hooks-rely-on-call-order/)
-<https://github.com/reactjs/rfcs/pull/68>
+[Frustrations with React Hooks - LogRocket Blog](https://blog.logrocket.com/frustrations-with-react-hooks/)  
+<https://github.com/slorber/react-async-hook>  
+[GitHub - alexreardon/use-memo-one: useMemo and useCallback but with a stable cache](https://github.com/alexreardon/use-memo-one)  
+[GitHub - slorber/react-async-hook: React hook to handle any async operation in React components, and prevent race conditions](https://github.com/slorber/react-async-hook)  
+<https://medium.com/swlh/the-ugly-side-of-hooks-584f0f8136b6>  
+<https://dmitripavlutin.com/react-hooks-stale-closures/>  
+[Why Do React Hooks Rely on Call Order? — Overreacted](https://overreacted.io/why-do-hooks-rely-on-call-order/)  
+<https://github.com/reactjs/rfcs/pull/68>  
 <https://dillonshook.com/a-critique-of-react-hooks/>
