@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[React] 리액트 훅이 실패한 설계인 이유 네가지"
-subtitle: "리액트 훅이 실패한 설계인 이유 네가지"
+title: "[React] 더 나은 함수 컴포넌트를 위한 3가지 팁"
+subtitle: "더 나은 함수 컴포넌트를 위한 3가지 팁"
 categories: devlog
-tags: js javascript front-end 프론트엔드 리액트 React hooks React-hooks 훅 훅스
+tags: js javascript front-end 프론트엔드 리액트 훅 훅스 tips
 comments: true
 header-img: "/img/posts/3_tips_for_better_functional_components/header.jpeg"
 ---
